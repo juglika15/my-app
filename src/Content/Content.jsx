@@ -1,4 +1,5 @@
 import "./Content.css";
+import Item from "./Item/Item";
 import dune1Img from "../assets/images/dune1.jpg";
 import dune2Img from "../assets/images/dune2.jpg";
 import boxOfPainImg from "../assets/images/dune-boxofpain.jpg";
