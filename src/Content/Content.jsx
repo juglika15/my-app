@@ -11,6 +11,63 @@ import spiceImg from "../assets/images/dune-spice.jpg";
 import stillsuitImg from "../assets/images/dune-stillsuit.jpg";
 import thumperImg from "../assets/images/dune-thumper.jpg";
 
+const items = [
+  {
+    name: "Box of Pain",
+    description: "Important tool for Bene Gesserit to test human character",
+    prince: "100 Solaris",
+    img: boxOfPainImg,
+  },
+  {
+    name: "Crysknife",
+    description: "Made from a Sandworms tooth, sharp as a steel blade",
+    prince: "50 Solaris",
+    img: crysknifeImg,
+  },
+  {
+    name: "Stillsuit",
+    description: "Vital for surviving deserts of Arrakis",
+    prince: "250 Solaris",
+    img: stillsuitImg,
+  },
+  {
+    name: "Goggles",
+    description: "To see in deset sun and in desert sand",
+    prince: "30 Solaris",
+    img: gogglesImg,
+  },
+  {
+    name: "Spice Melange",
+    description: "The most important substance in the universe",
+    prince: "10 000 Solaris",
+    img: spiceImg,
+  },
+  {
+    name: "Paul Atreides's Ring",
+    description: "The Ring of the Duke of Hause Atreides",
+    prince: "1000 Solaris",
+    img: ringImg,
+  },
+  {
+    name: "Shield",
+    description: "Necessary In every close combat",
+    prince: "500 Solaris",
+    img: shieldImg,
+  },
+  {
+    name: "Thumper",
+    description: "Used to summen Sandworms",
+    prince: "35 Solaris",
+    img: thumperImg,
+  },
+  {
+    name: "Fremen Mask",
+    description: "For daily use in desert",
+    prince: "40 Solaris",
+    img: maskImg,
+  },
+];
+
 function Content() {
   return (
     <main className="content">
