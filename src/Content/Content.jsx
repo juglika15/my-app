@@ -1,12 +1,21 @@
 import "./Content.css";
-import dune1 from "./assets/images/dune1.jpg";
-import dune2 from "./assets/images/dune2.jpg";
+import dune1Img from "../assets/images/dune1.jpg";
+import dune2Img from "../assets/images/dune2.jpg";
+import boxOfPainImg from "../assets/images/dune-boxofpain.jpg";
+import crysknifeImg from "../assets/images/dune-crysknife.jpg";
+import gogglesImg from "../assets/images/dune-goggles.jpg";
+import maskImg from "../assets/images/dune-mask.jpg";
+import ringImg from "../assets/images/dune-ring.jpg";
+import shieldImg from "../assets/images/dune-shield.jpg";
+import spiceImg from "../assets/images/dune-spice.jpg";
+import stillsuitImg from "../assets/images/dune-stillsuit.jpg";
+import thumperImg from "../assets/images/dune-thumper.jpg";
 
 function Content() {
   return (
     <main className="content">
       <div className="movie">
-        <img src={dune1} alt="Dune 1" />
+        <img src={dune1Img} alt="Dune 1" />
         <div>
           <h2>Dune: Part One</h2>
           <p className="description">
@@ -19,7 +28,7 @@ function Content() {
         </div>
       </div>
       <div className="movie">
-        <img src={dune2} alt="Dune 2" />
+        <img src={dune2Img} alt="Dune 2" />
         <div>
           <h2>Dune: Part Two</h2>
           <p className="description">
