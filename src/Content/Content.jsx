@@ -1,7 +1,5 @@
 import "./Content.css";
 import Item from "./Item/Item";
-import dune1Img from "../assets/images/dune1.jpg";
-import dune2Img from "../assets/images/dune2.jpg";
 import boxOfPainImg from "../assets/images/dune-boxofpain.jpg";
 import crysknifeImg from "../assets/images/dune-crysknife.jpg";
 import gogglesImg from "../assets/images/dune-goggles.jpg";
@@ -20,7 +18,7 @@ const items = [
   },
   {
     name: "Crysknife",
-    description: "Made from a Sandworms tooth, sharp as a steel blade",
+    description: "Made from a Sandworms tooth, as sharp as a steel blade",
     img: crysknifeImg,
   },
   {
@@ -63,9 +61,12 @@ const items = [
 function Content() {
   return (
     <main className="content">
-      {items.map((item) => (
-        <Item item={item} key={item.name} />
-      ))}
+      <h2>Item Shop</h2>
+      <div className="items">
+        {items.map((item) => (
+          <Item item={item} key={item.name} />
+        ))}
+      </div>
     </main>
   );
 }

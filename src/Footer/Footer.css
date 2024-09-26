@@ -1,5 +1,5 @@
 .footer {
-  background-color: #ad9f92;
+  background-color: var(--secondary-color);
   padding: 1rem;
   height: 15vh;
   display: flex;
@@ -20,6 +20,6 @@
 }
 
 .footer li:hover {
-  background-color: #df9c65;
+  background-color: var(--primary-color);
   color: white;
 }

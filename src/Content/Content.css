@@ -1,38 +1,22 @@
 .content {
   width: 100vw;
   height: 70vh;
-  background-color: #f9f0db;
+  background-color: var(--background-color);
   padding: 2rem;
   display: flex;
+  gap: 2rem;
   flex-direction: column;
-  gap: 1rem;
   align-items: center;
+  overflow-y: scroll;
   z-index: 0;
   box-shadow: 0rem 1rem 1rem rgba(0, 0, 0, 0.2);
 }
 
-.movie {
-  width: 90vw;
-  height: 100vh;
-  overflow: hidden;
-  display: flex;
-  gap: 1rem;
-}
+.items {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
 
-h2 {
-  cursor: pointer;
-}
-
-img {
-  width: 30rem;
-}
-
-.description {
-  padding-top: 1rem;
-  display: -webkit-box;
-  -webkit-line-clamp: 10;
-  line-clamp: 10;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  grid-gap: 1rem;
+  justify-items: space-evenly;
 }

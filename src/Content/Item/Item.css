@@ -1,0 +1,28 @@
+.item {
+  width: 50vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.item-img {
+  width: 7.5rem;
+}
+
+.item-desc {
+  font-size: 0.9rem;
+}
+
+.add-cart {
+  background-color: var(--primary-color);
+  padding: 0.6rem;
+  border: none;
+  border-radius: 0.3rem;
+  color: white;
+}
+
+.add-cart:hover {
+  background-color: white;
+  color: var(--primary-color);
+}
