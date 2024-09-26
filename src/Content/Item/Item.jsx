@@ -1,11 +1,12 @@
 import "./Item.css";
 
-export default function Item() {
-  <div className="item">
-    <img src="" alt="Item name" />
-    <h4>Name</h4>
-    <p>Description</p>
-    <span>Price</span>
-    <button>Add to Cart</button>
-  </div>;
+export default function Item({ item }) {
+  return (
+    <div className="item">
+      <img src={item.img} alt={item.name} />
+      <h4>{item.name}</h4>
+      <p>{item.description}</p>
+      <button>Add to Cart</button>
+    </div>
+  );
 }
