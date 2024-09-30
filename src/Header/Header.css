@@ -21,14 +21,14 @@ ul {
   gap: 0.5rem;
 }
 
-.link {
+.navlink {
   color: white;
   text-decoration: none;
   padding: 0.3rem;
   border-radius: 0.5rem;
 }
 
-.link:hover,
+.navlink:hover,
 .active {
   background-color: blanchedalmond;
   color: black;

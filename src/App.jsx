@@ -18,8 +18,8 @@ function App() {
           <Route path="about" element={<About />} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
+        <Footer />
       </Router>
-      <Footer />
     </div>
   );
 }

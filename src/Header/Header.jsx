@@ -8,22 +8,22 @@ function Header() {
       <nav>
         <ul>
           <li>
-            <NavLink to="/" className="link">
+            <NavLink to="/" className="navlink">
               Home
             </NavLink>
           </li>
           <li>
-            <NavLink to="/contact" className="link">
+            <NavLink to="/contact" className="navlink">
               Contact
             </NavLink>
           </li>
           <li>
-            <NavLink to="/books" className="link">
+            <NavLink to="/books" className="navlink">
               Books
             </NavLink>
           </li>
           <li>
-            <NavLink to="/about" className="link">
+            <NavLink to="/about" className="navlink">
               About
             </NavLink>
           </li>
