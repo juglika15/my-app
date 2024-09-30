@@ -27,6 +27,11 @@ function Header() {
               About
             </NavLink>
           </li>
+          <li>
+            <NavLink to="/assignment-3" className="navlink">
+              Assignment-3
+            </NavLink>
+          </li>
         </ul>
       </nav>
     </header>
