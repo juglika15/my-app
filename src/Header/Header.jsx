@@ -1,3 +1,4 @@
+import { Link, NavLink } from "react-router-dom";
 import "./Header.css";
 
 function Header() {
@@ -7,16 +8,24 @@ function Header() {
       <nav>
         <ul>
           <li>
-            <a href="#home">Home</a>
+            <NavLink to="/" className="link">
+              Home
+            </NavLink>
           </li>
           <li>
-            <a href="#cast">Cast</a>
+            <NavLink to="/contact" className="link">
+              Contact
+            </NavLink>
           </li>
           <li>
-            <a href="#books">Books</a>
+            <NavLink to="/books" className="link">
+              Books
+            </NavLink>
           </li>
           <li>
-            <a href="#contact">Contact</a>
+            <NavLink to="/about" className="link">
+              About
+            </NavLink>
           </li>
         </ul>
       </nav>
