@@ -25,7 +25,7 @@ export default function Contact() {
         </label>
         <label>
           Message:
-          <textarea name="message" placeholder="Write us..." />
+          <textarea name="message" placeholder="Write to us..." />
         </label>
         <button type="submit" className="button">
           Send
