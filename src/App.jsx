@@ -17,7 +17,6 @@ function App() {
           <Route path="/" element={<Content />} />
           <Route path="contact" element={<Contact />} />
           <Route path="about" element={<About />} />
-          <Route path="about" element={<About />} />
           <Route path="assignment-3" element={<Assignment3 />} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
