@@ -18,7 +18,7 @@ const blogs = [
     id: "0102",
     title: "Dune: Part Two",
     preview:
-      "When the first part of Denis Villeneuve’s Dune adaptation came out two and a half years ago I was glad to admit to being apathetic about seeing it—I had read the book and enjoyed it but wasn’t blown away by it",
+      "When the first part of Denis Villeneuve’s Dune adaptation came out two and a half years ago I was glad to admit to being apathetic about seeing it—I had read the book and enjoyed it but wasn’t blown away by it.",
     author: "Jordan Poss",
     imageUrl:
       "https://images.squarespace-cdn.com/content/v1/5a0a45cdbce176b25421b468/b72181b6-35ab-49a2-9877-eb23697eae3a/dune+part+two+sandworms.jpg?format=2500w",

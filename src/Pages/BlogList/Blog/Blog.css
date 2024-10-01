@@ -1,0 +1,34 @@
+.blog-item {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.blog-item:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.blog-item img {
+  cursor: pointer;
+  max-width: 12.5rem;
+  height: auto;
+  border-radius: 0.5rem;
+}
+
+.blog-content {
+  max-width: 37.5rem;
+}
+
+.blog-title {
+  font-size: 1.5rem;
+  margin-bottom: 0.6rem;
+}
+
+.blog-preview {
+  font-size: 1rem;
+  margin-bottom: 0.6rem;
+}
+
+.blog-author {
+  font-weight: bold;
+}
