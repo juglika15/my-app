@@ -10,17 +10,17 @@ const obj = {
 };
 
 export default function Assignment3() {
-  const tableBody = Object.keys(obj).reduce((acc, key, index) => {
-    acc.push(
+  const tableBody = Object.keys(obj).reduce(
+    (acc, key, index) => [
+      ...acc,
       <tr key={key}>
         <td>{key}</td>
         <td>{obj[key]}</td>
         <td>{index}</td>
-      </tr>
-    );
-
-    return acc;
-  }, []);
+      </tr>,
+    ],
+    []
+  );
 
   const list = (
     <table>
