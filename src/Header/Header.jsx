@@ -18,8 +18,8 @@ function Header() {
             </NavLink>
           </li>
           <li>
-            <NavLink to="/books" className="navlink">
-              Books
+            <NavLink to="/blog" className="navlink">
+              Blog
             </NavLink>
           </li>
           <li>

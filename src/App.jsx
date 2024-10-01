@@ -7,6 +7,7 @@ import Contact from "./Pages/Contact/Contact";
 import About from "./Pages/About/About";
 import Assignment3 from "./Pages/Assignment3/Assignment3";
 import PageNotFound from "./Pages/PageNotFound/PageNotFound";
+import Blog from "./Pages/Blog/Blog";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/" element={<Content />} />
           <Route path="contact" element={<Contact />} />
           <Route path="about" element={<About />} />
+          <Route path="blog" element={<Blog />} />
           <Route path="assignment-3" element={<Assignment3 />} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
