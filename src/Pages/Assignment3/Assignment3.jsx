@@ -35,5 +35,5 @@ export default function Assignment3() {
     </table>
   );
 
-  return <div className="content">{list}</div>;
+  return <main className="main">{list}</main>;
 }

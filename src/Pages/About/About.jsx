@@ -1,7 +1,7 @@
 import "./About.css";
 export default function About() {
   return (
-    <div className="content">
+    <main className="main">
       <h2>About The Project</h2>
       <p className="info">
         This is a React project designed to demonstrate a wide range of
@@ -12,6 +12,6 @@ export default function About() {
         global state management, and the flexibility of JSX for rendering
         dynamic UIs.
       </p>
-    </div>
+    </main>
   );
 }

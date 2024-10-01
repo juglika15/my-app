@@ -60,7 +60,7 @@ const items = [
 
 function Content() {
   return (
-    <main className="content">
+    <main className="main">
       <h2>Item Shop</h2>
       <div className="items">
         {items.map((item) => (

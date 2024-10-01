@@ -2,7 +2,7 @@ import "./Contact.css";
 
 export default function Contact() {
   return (
-    <div className="content">
+    <main className="main">
       <h1>Contact Us</h1>
       <p>Phone: +995 555 123 343</p>
       <p>Email: contact@dune.com</p>
@@ -31,6 +31,6 @@ export default function Contact() {
           Send
         </button>
       </form>
-    </div>
+    </main>
   );
 }
