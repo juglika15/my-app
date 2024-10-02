@@ -28,6 +28,11 @@ function Header() {
             </NavLink>
           </li>
           <li>
+            <NavLink to="/profile" className="navlink">
+              Profile
+            </NavLink>
+          </li>
+          <li>
             <NavLink to="/assignment-3" className="navlink">
               Assignment-3
             </NavLink>
