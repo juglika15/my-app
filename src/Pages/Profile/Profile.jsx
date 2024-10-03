@@ -7,11 +7,11 @@ export default function Profile() {
         <div className="name">
           <label>
             <span>First Name:</span>
-            <input type="text" name="first name" value="John" />
+            <input type="text" name="first name" />
           </label>
           <label>
             <span>Last Name:</span>
-            <input type="text" name="last name" value="Doe" />
+            <input type="text" name="last name" />
           </label>
         </div>
         <label>
@@ -20,7 +20,7 @@ export default function Profile() {
         </label>
         <label>
           Email:
-          <input type="email" name="email" value="johndoe@gmail.com" />
+          <input type="email" name="email" />
         </label>
       </form>
     </div>

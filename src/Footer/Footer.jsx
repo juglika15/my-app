@@ -17,8 +17,8 @@ function Footer() {
             </Link>
           </li>
           <li>
-            <Link to="/policies" className="link">
-              Policies
+            <Link to="/profile" className="link">
+              Profile
             </Link>
           </li>
           <li>
