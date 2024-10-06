@@ -1,5 +1,6 @@
 import "./BlogList.css";
 import Blog from "./Blog/Blog";
+import usePosts from "../../assets/hooks/usePosts";
 
 const blogs = [
   {
@@ -38,11 +39,15 @@ const blogs = [
 ];
 
 export default function BlogList() {
+
+  const { posts } = usePosts(); 
+
   return (
     <main className="main">
       {blogs.map((blog) => (
         <Blog blog={blog} key={blog.id} />
       ))}
+      
     </main>
   );
 }
