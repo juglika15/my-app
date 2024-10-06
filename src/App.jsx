@@ -9,7 +9,7 @@ import Assignment3 from "./Pages/Assignment3/Assignment3";
 import PageNotFound from "./Pages/PageNotFound/PageNotFound";
 import BlogList from "./Pages/BlogList/BlogList";
 import Profile from "./Pages/Profile/Profile";
-import { useEffect, useState } from "react";
+
 
 function App() {
 

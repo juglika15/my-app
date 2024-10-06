@@ -1,4 +1,3 @@
-import { useState } from "react";
 import "./Blog.css";
 
 export default function Blog({ blog }) {
