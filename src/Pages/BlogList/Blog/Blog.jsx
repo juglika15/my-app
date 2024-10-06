@@ -22,6 +22,8 @@ export default function Blog({ blog }) {
           <button className="blog-button">👍 Like {blog.reactions.likes}</button>
           <button className="blog-button">👎 Dislike {blog.reactions.dislikes}</button>
         </div>
+          
+      <p className="blog-views">Views: {blog.views}</p>
       </div>
     </div>
   );
