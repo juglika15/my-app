@@ -1,4 +1,5 @@
-import { NavLink } from "react-router-dom";
+// import { NavLink } from "react-router-dom";
+import Link from "next/link";
 import "./Header.css";
 
 function Header() {
@@ -8,34 +9,34 @@ function Header() {
       <nav>
         <ul>
           <li>
-            <NavLink to="/" className="navlink">
+            <Link href="/" className="navlink">
               Home
-            </NavLink>
+            </Link>
           </li>
           <li>
-            <NavLink to="/contact" className="navlink">
+            <Link href="/contact" className="navlink">
               Contact
-            </NavLink>
+            </Link>
           </li>
           <li>
-            <NavLink to="/blog" className="navlink">
+            <Link href="/blog" className="navlink">
               Blog
-            </NavLink>
+            </Link>
           </li>
           <li>
-            <NavLink to="/about" className="navlink">
+            <Link href="/about" className="navlink">
               About
-            </NavLink>
+            </Link>
           </li>
           <li>
-            <NavLink to="/profile" className="navlink">
+            <Link href="/profile" className="navlink">
               Profile
-            </NavLink>
+            </Link>
           </li>
           <li>
-            <NavLink to="/assignment-3" className="navlink">
+            <Link href="/assignment-3" className="navlink">
               Assignment-3
-            </NavLink>
+            </Link>
           </li>
         </ul>
       </nav>

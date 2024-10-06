@@ -1,5 +1,4 @@
-import "./BlogList.css";
-import Blog from "./Blog/Blog";
+import "./Blog.css";
 
 const blogs = [
   {
@@ -44,5 +43,20 @@ export default function BlogList() {
         <Blog blog={blog} key={blog.id} />
       ))}
     </main>
+  );
+}
+
+function Blog({ blog }) {
+  return (
+    <div className="blog-item">
+      <img src={blog.imageUrl} alt={blog.title} />
+      <div className="blog-content">
+        <h3 className="blog-title">{blog.title}</h3>
+        <p className="blog-preview">{blog.preview}</p>
+        <p className="blog-author">
+          By <em>{blog.author}</em>
+        </p>
+      </div>
+    </div>
   );
 }

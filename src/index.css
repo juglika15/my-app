@@ -11,3 +11,35 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #df9c65;
+  --secondary-color: #ad9f92;
+  --background-color: #f9f0db;
+}
+
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  font-family: "Dune", sans-serif;
+}
+
+@font-face {
+  font-family: "Dune";
+  src: url("../src/assets/dune_rise/Dune_Rise.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
