@@ -1,6 +1,9 @@
+import { useState } from "react";
 import "./Blog.css";
 
 export default function Blog({ blog }) {
+
+
   return (
     <div className="blog-item">
       <div className="blog-content">
@@ -16,8 +19,8 @@ export default function Blog({ blog }) {
           ))}
         </ul>
         <div style={{ marginTop: "10px" }}>
-          <button>👍 Like {blog.reactions.likes}</button>
-          <button>👎 Dislike {blog.reactions.dislikes}</button>
+          <button className="blog-button">👍 Like {blog.reactions.likes}</button>
+          <button className="blog-button">👎 Dislike {blog.reactions.dislikes}</button>
         </div>
       </div>
     </div>
