@@ -1,19 +1,21 @@
 import "./App.css";
-import Header from "./Header/Header";
-import Content from "./Content/Content";
-import Footer from "./Footer/Footer";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Contact from "./Pages/Contact/Contact";
-import About from "./Pages/About/About";
-import Assignment3 from "./Pages/Assignment3/Assignment3";
-import PageNotFound from "./Pages/PageNotFound/PageNotFound";
-import BlogList from "./Pages/BlogList/BlogList";
-import Profile from "./Pages/Profile/Profile";
+// import Header from "./Header/Header";
+// import Content from "./Content/Content";
+// import Footer from "./Footer/Footer";
+// import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+// import Contact from "./Pages/Contact/Contact";
+// import About from "./Pages/About/About";
+// import Assignment3 from "./Pages/Assignment3/Assignment3";
+// import PageNotFound from "./Pages/PageNotFound/PageNotFound";
+// import BlogList from "./Pages/BlogList/BlogList";
+// import Profile from "./Pages/Profile/Profile";
 
 function App() {
+  console.log(1);
   return (
     <div className="container">
-      <Router>
+      <h1>Title</h1>
+      {/* <Router>
         <Header />
         <Routes>
           <Route path="/" element={<Content />} />
@@ -25,7 +27,7 @@ function App() {
           <Route path="*" element={<PageNotFound />} />
         </Routes>
         <Footer />
-      </Router>
+      </Router> */}
     </div>
   );
 }
