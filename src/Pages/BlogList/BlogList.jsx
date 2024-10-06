@@ -44,8 +44,8 @@ export default function BlogList() {
 
   return (
     <main className="main">
-      {blogs.map((blog) => (
-        <Blog blog={blog} key={blog.id} />
+      {posts.map((post) => (
+        <Blog blog={post} key={post.id} />
       ))}
       
     </main>
