@@ -1,4 +1,3 @@
-// import { NavLink } from "react-router-dom";
 import Link from "next/link";
 import "./Header.css";
 
@@ -31,11 +30,6 @@ function Header() {
           <li>
             <Link href="/profile" className="navlink">
               Profile
-            </Link>
-          </li>
-          <li>
-            <Link href="/assignment-3" className="navlink">
-              Assignment-3
             </Link>
           </li>
         </ul>
