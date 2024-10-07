@@ -27,6 +27,18 @@ const renderStars = (rating) => {
   }
   return stars;
 };
+const formatDate = (dateString) => {
+  const date = new Date(dateString);
+  return date.toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit',
+    hour12: true,
+  });
+};
 
 export async function generateStaticParams() {
   const res = await fetch('https://dummyjson.com/products?limit=0&skip=0'); // Adjust the URL if needed
@@ -92,6 +104,33 @@ export default async function ProductPage({ params }) {
             <button className="addCartBtn">Add to cart</button>
             <button className="buyBtn">Buy now</button>
           </div>
+        </div>
+        <div className="textSection">
+          <p className="desc">{product.description} </p>
+          <div className="additionalInfo">
+            <div className="dimensions">
+              <h6>dimensions:</h6>
+              <p>width: {product.dimensions.width}</p>
+              <p>height: {product.dimensions.height}</p>
+              <p>depth: {product.dimensions.depth}</p>
+            </div>
+            <p className="weight">weight: {product.weight}kg</p>
+
+            <p className="sku">sku: {product.sku}</p>
+          </div>
+        </div>
+        <div className="reviewsCont">
+          <h3 className="reviews">Customer reviews</h3>
+          {product.reviews.map((review, index) => (
+            <div key={index} className="review">
+              <h6>{review.reviewerName}</h6>
+              <div className="reviewDetails">
+                <div className="stars">{renderStars(review.rating)}</div>
+                <p className="date">{formatDate(review.date)}</p>
+              </div>
+              <p className="comment">{review.comment}</p>
+            </div>
+          ))}
         </div>
       </div>
     </div>
