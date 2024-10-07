@@ -12,7 +12,6 @@ export default function About() {
         global state management, and the flexibility of JSX for rendering
         dynamic UIs.
       </p>
-
     </main>
   );
 }
