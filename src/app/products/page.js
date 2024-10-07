@@ -1,19 +1,22 @@
 "use client"
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
+import { ProductList } from "./ProductList";
 
 const productsURL = 'https://dummyjson.com/products';
 
 export default function Products() {
-
-  useEffect(()=>{
-    async function fetchProducts() {
-      const response = await fetch(productsURL);
-      const data = await response.json();
-
-      console.log(data);
-      
-    }
-
+   const [productList, setProductList] = useState([]);
+  //  console.log(productList);
+   useEffect(()=>{
+     async function fetchProducts() {
+       try {
+         const response = await fetch(productsURL);
+         const data = await response.json();
+         setProductList(data.products);
+        } catch (error) {
+          setProductList([]);
+        }
+      }
     fetchProducts();
   },[])
   
