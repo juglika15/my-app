@@ -1,4 +1,6 @@
 import "./ProductCard.css"
+import Link from "next/link"
+
 export const ProductCard = (props) => {
   return (
     <div className="item">
@@ -21,7 +23,7 @@ export const ProductCard = (props) => {
         <p className="item-desc">{props.product.description}</p>
         <div>
           <button className="button">Add to Cart</button>
-          <a href="/" className="moreCardBtn">more details</a>
+          <Link href={`/products/${props.product.id}`} className="moreCardBtn">more details</Link>
         </div>
     </div>
   )
