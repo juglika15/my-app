@@ -23,6 +23,11 @@ function Header() {
             </Link>
           </li>
           <li>
+            <Link href="/products" className="navlink">
+              Products
+            </Link>
+          </li>
+          <li>
             <Link href="/about" className="navlink">
               About
             </Link>
