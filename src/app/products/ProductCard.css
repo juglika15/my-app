@@ -3,3 +3,16 @@
   text-decoration: none;
   color: rgb(0, 0, 0);
 }
+
+.pagination {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  background-color: #f9f0db;
+}
+
+.pagination button {
+  margin: 0 10px;
+  padding: 5px 20px;
+  font-size: 12px;
+}
