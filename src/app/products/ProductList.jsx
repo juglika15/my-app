@@ -1,5 +1,6 @@
 import { ProductCard } from "./ProductCard"
 import "../../Content/Content.css"
+import "../../Content/Item/Item.css"
 
 export const ProductList = (props)=> {
   return (
