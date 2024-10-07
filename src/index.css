@@ -27,7 +27,6 @@ code {
 html,
 body {
   height: 100%;
-  overflow: hidden;
 }
 
 .container {
@@ -46,7 +45,7 @@ body {
 
 .main {
   width: 100vw;
-  height: 75vh;
+  min-height: 79vh;
   background-color: var(--background-color);
   padding: 2rem;
   display: flex;

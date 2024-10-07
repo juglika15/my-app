@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect } from "react";
 import { useState } from "react";
 
@@ -7,10 +9,13 @@ const usePosts = () => {
 
   useEffect(() => {
     setLoading(true);
-    fetch('https://dummyjson.com/posts')
-      .then(response => response.json())
-      .then(data => {setPosts(data.posts); setLoading(false)})
-      .catch(error => console.error('Error fetching posts:', error));
+    fetch("https://dummyjson.com/posts")
+      .then((response) => response.json())
+      .then((data) => {
+        setPosts(data.posts);
+        setLoading(false);
+      })
+      .catch((error) => console.error("Error fetching posts:", error));
   }, []);
 
   return { posts, loading };

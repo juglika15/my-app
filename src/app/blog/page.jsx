@@ -1,3 +1,5 @@
+"use client";
+
 import usePosts from "../../assets/hooks/usePosts";
 
 export default function BlogList() {
