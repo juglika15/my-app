@@ -1,4 +1,4 @@
-import "./Assignment3.css";
+import "./assignment-3.css";
 
 const obj = {
   id: "10002",
