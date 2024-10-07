@@ -1,6 +1,7 @@
 import styles from './productPage.css';
 import Link from 'next/link';
 import ImageSlider from '../../utils/imageSlider';
+import QuantitySelector from '../../utils/quantitySelector';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar, faStarHalfAlt } from '@fortawesome/free-solid-svg-icons';
 
