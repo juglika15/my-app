@@ -31,19 +31,19 @@
 
 .blog-author {
   font-weight: bold;
-  padding-bottom: 10px;
+  padding-bottom: 0.625rem;
 }
 
 .blog-tags {
   background-color: #e0e0e0;
-  padding: 5px;
-  border-radius: 5px;
+  padding: 0.3125rem;
+  border-radius: 0.3125rem;
 }
 
 .blog-button {
-  padding: 10px 20px;
+  padding: 0.625rem 1.25rem;
 }
 
 .blog-views {
-  margin-top: 10px;
+  margin-top: 0.625rem;
 }
