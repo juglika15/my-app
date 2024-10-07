@@ -57,6 +57,43 @@ export default async function ProductPage({ params }) {
           ))}
         </div>
       </div>
+      <div className="gridCont">
+        <ImageSlider images={product.images} />
+        <div className="sideBar">
+          <div className="sideBarHeading">
+            <p className="brand">{product.brand}</p>
+            <div className="pricing">
+              <p className="price">{product.price}</p>
+              <div className="discounting">
+                <p className="discount">{product.discountPercentage}% </p>
+                <p className="off">Off</p>
+              </div>
+            </div>
+          </div>
+          <div className="legalInfo">
+            <p className="waranty">{product.warrantyInformation}</p>
+            <p className="shipping">{product.shippingInformation} </p>
+            <p className="return">{product.returnPolicy} </p>
+          </div>
+          <div className="stocks">
+            <p className="stock">
+              Amount in stock: <span>{product.stock}</span>{' '}
+            </p>
+            <p className="minOrder">
+              Minimum order quantity:{' '}
+              <span>{product.minimumOrderQuantity}</span>
+            </p>
+            <QuantitySelector
+              stock={product.stock}
+              minOrder={product.minimumOrderQuantity}
+            />
+          </div>
+          <div className="buttons">
+            <button className="addCartBtn">Add to cart</button>
+            <button className="buyBtn">Buy now</button>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
