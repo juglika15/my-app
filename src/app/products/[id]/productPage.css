@@ -27,22 +27,6 @@
   width: 32px;
   color: #df9c65;
 }
-@media only screen and (max-width: 900px) {
-  #productPage .productTitle {
-    font-size: 1.5rem;
-  }
-  #productPage .heading .svg-inline--fa.fa-star,
-  #productPage .heading .svg-inline--fa.fa-star-half-stroke {
-    width: 24px;
-  }
-  #productPage .heading {
-    flex-direction: column-reverse;
-    text-align: center;
-  }
-  #productPage .grouping {
-    justify-content: center;
-  }
-}
 
 #productPage .grouping {
   display: flex;
@@ -296,6 +280,7 @@
 }
 #productPage .textSection .desc {
   font-size: 1rem;
+  padding-bottom: 8px;
 }
 #productPage .textSection .additionalInfo {
   display: flex;
@@ -351,4 +336,111 @@
 }
 #productPage .reviewsCont .review .comment {
   font-size: 1rem;
+}
+@media only screen and (max-width: 1400px) {
+  #productPage .slider {
+    aspect-ratio: unset;
+    height: 350px;
+  }
+  #productPage .sideBarHeading {
+    gap: 1.2rem;
+  }
+  #productPage .stocks {
+    text-align: center;
+  }
+}
+@media only screen and (max-width: 1000px) {
+  #productPage .sideBar {
+    padding: 2rem;
+  }
+  #productPage .brand,
+  #productPage .price {
+    font-size: 1rem;
+  }
+  #productPage .discounting {
+    display: none;
+  }
+  #productPage .legalInfo {
+    font-size: 0.875rem;
+    padding: 0.5rem;
+    text-align: center;
+  }
+  #productPage .stocks {
+    padding: 0.5rem;
+  }
+  #productPage .stocks .stock,
+  #productPage .stocks .minOrder {
+    font-size: 0.875rem;
+  }
+  #productPage .quantitySelector {
+    width: 100%;
+  }
+  #productPage .textSection {
+    padding: 1.5rem;
+  }
+  #productPage .textSection .desc {
+    font-size: 0.875rem;
+  }
+}
+@media only screen and (max-width: 900px) {
+  #productPage .productTitle {
+    font-size: 1.5rem;
+  }
+  #productPage .heading .svg-inline--fa.fa-star,
+  #productPage .heading .svg-inline--fa.fa-star-half-stroke {
+    width: 24px;
+  }
+  #productPage .heading {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+  #productPage .grouping {
+    justify-content: center;
+  }
+}
+@media only screen and (max-width: 768px) {
+  #productPage .gridCont {
+    display: flex;
+    flex-direction: column;
+  }
+  #productPage .quantitySelector {
+    width: 50%;
+  }
+  #productPage .slider {
+    order: 1;
+  }
+  #productPage .sideBar {
+    order: 3;
+  }
+  #productPage .textSection {
+    order: 2;
+  }
+  #productPage .reviewsCont {
+    order: 4;
+  }
+}
+@media only screen and (max-width: 475px) {
+  #productPage .grouping {
+    flex-direction: column;
+  }
+  #productPage {
+    padding-inline: 1rem;
+  }
+  #productPage .textSection .additionalInfo {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  #productPage .textSection .additionalInfo .dimensions {
+    text-align: center;
+  }
+  #productPage .quantitySelector {
+    width: 100%;
+  }
+  #productPage .reviewsCont .review .reviewDetails {
+    flex-direction: column;
+    text-align: center;
+  }
+  #productPage .reviewsCont .review .comment {
+    text-align: center;
+  }
 }
