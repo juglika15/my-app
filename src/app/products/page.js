@@ -9,20 +9,24 @@ export default function Products() {
    const [productList, setProductList] = useState([]);
    const [currentPage, setCurrentPage] = useState(1);
    const [totalPages, setTotalPages] = useState(0);
+   const [loading, setLoading] = useState(true);
 
    const itemsPerPage = 9;
 
    useEffect(()=>{
      async function fetchProducts() {
-       try {
-         const response = await fetch(`${productsURL}?limit=${itemsPerPage}&skip=${(currentPage - 1) * itemsPerPage}`);
-         const data = await response.json();
-         setProductList(data.products);
-         setTotalPages(Math.ceil(data.total / itemsPerPage));
-        } catch (error) {
-          setProductList([]);
-        }
+      setLoading(true);
+      try {
+        const response = await fetch(`${productsURL}?limit=${itemsPerPage}&skip=${(currentPage - 1) * itemsPerPage}`);
+        const data = await response.json();
+        setProductList(data.products);
+        setTotalPages(Math.ceil(data.total / itemsPerPage));
+      } catch (error) {
+        setProductList([]);
+      }finally{
+          setLoading(false);
       }
+     }
     fetchProducts();
   },[currentPage]);
 
@@ -40,18 +44,22 @@ export default function Products() {
   
   return (
     <div>
-      <ProductList productList={productList} />
-      
-      {/* Pagination controls */}
-      <div className="pagination">
-        <button onClick={handlePreviousPage} disabled={currentPage === 1}>
-          Previous
-        </button>
-        <span>Page {currentPage} of {totalPages}</span>
-        <button onClick={handleNextPage} disabled={currentPage === totalPages}>
-          Next
-        </button>
-      </div>
+      {loading ? (
+        <p className="main">Loading...</p>
+      ) : (
+      <>
+        <ProductList productList={productList} />
+        <div className="pagination">
+          <button onClick={handlePreviousPage} disabled={currentPage === 1}>
+            Previous
+          </button>
+          <span>Page {currentPage} of {totalPages}</span>
+          <button onClick={handleNextPage} disabled={currentPage === totalPages}>
+            Next
+          </button>
+        </div>
+      </>
+      )}
     </div>
   )
 }
