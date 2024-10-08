@@ -1,13 +1,19 @@
-"use client";
+'use client';
 
-import usePosts from "../../assets/hooks/usePosts";
+import usePosts from '../../assets/hooks/usePosts';
+import Spinner from '../../assets/spinner/spinner';
 
 export default function BlogList() {
   const { posts, loading } = usePosts();
 
   return (
     <main className="main">
-      {loading && <p>Loading...</p>}
+      {loading && (
+        <>
+          <span>Loading...</span>
+          <Spinner />
+        </>
+      )}
       {posts.map((post) => (
         <Blog blog={post} key={post.id} />
       ))}
@@ -25,12 +31,12 @@ function Blog({ blog }) {
         <strong>Tags:</strong>
         <ul>
           {blog.tags.map((tag) => (
-            <li>
+            <li key={tag}>
               <span className="blog-tags">{tag}</span>
             </li>
           ))}
         </ul>
-        <div style={{ marginTop: "10px" }}>
+        <div style={{ marginTop: '10px' }}>
           <button className="blog-button">
             👍 Like {blog.reactions.likes}
           </button>

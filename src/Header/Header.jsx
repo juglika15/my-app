@@ -1,5 +1,5 @@
-import Link from "next/link";
-import "./Header.css";
+import Link from 'next/link';
+import './Header.css';
 
 function Header() {
   return (

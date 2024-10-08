@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import dynamic from "next/dynamic";
+import dynamic from 'next/dynamic';
 
-const App = dynamic(() => import("../../Content/Content.jsx"), { ssr: true });
+const App = dynamic(() => import('../../Content/Content.jsx'), { ssr: true });
 
 export function ClientOnly() {
   return <App />;

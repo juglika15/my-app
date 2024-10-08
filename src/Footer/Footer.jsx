@@ -1,5 +1,5 @@
-import "./Footer.css";
-import Link from "next/link";
+import './Footer.css';
+import Link from 'next/link';
 
 function Footer() {
   return (

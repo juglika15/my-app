@@ -32,19 +32,18 @@ body {
 .container {
   display: flex;
   flex-direction: column;
-  height: 100%;
-  font-family: "Dune", sans-serif;
+  font-family: 'Dune', sans-serif;
 }
 
 @font-face {
-  font-family: "Dune";
-  src: url("../src/assets/dune_rise/Dune_Rise.ttf") format("truetype");
+  font-family: 'Dune';
+  src: url('../src/assets/dune_rise/Dune_Rise.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 
 .main {
-  width: 100vw;
+  width: 100%;
   min-height: 79vh;
   background-color: var(--background-color);
   padding: 2rem;
@@ -52,7 +51,6 @@ body {
   gap: 2rem;
   flex-direction: column;
   align-items: center;
-  overflow-y: scroll;
   z-index: 1;
   box-shadow: 0rem 1rem 1rem rgba(0, 0, 0, 0.2);
 }
