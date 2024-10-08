@@ -2,6 +2,10 @@
   display: flex;
   align-items: center;
   gap: 1.25rem;
+  background-color: whitesmoke;
+  border: 1px solid black;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
 }
 
 .blog-item:nth-child(even) {
@@ -10,7 +14,6 @@
 
 .blog-item img {
   cursor: pointer;
-  max-width: 12.5rem;
   height: auto;
   border-radius: 0.5rem;
 }
@@ -21,7 +24,7 @@
 
 .blog-title {
   font-size: 1.5rem;
-  margin-bottom: 0.6rem;
+  margin-bottom: 1.5rem;
 }
 
 .blog-preview {
@@ -45,5 +48,20 @@
 }
 
 .blog-views {
-  margin-top: 0.625rem;
+  margin: 0.625rem 0;
+}
+
+.tags {
+  padding-top: 1rem;
+  color: black;
+}
+
+.moreCardBtn {
+  margin-left: 20px;
+  text-decoration: none;
+  color: blue;
+}
+
+.moreCardBtn:hover {
+  color: orangered;
 }
