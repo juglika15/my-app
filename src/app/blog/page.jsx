@@ -6,7 +6,6 @@ import Spinner from '../../assets/spinner/spinner';
 
 export default function BlogList() {
   const { posts, loading } = usePosts();
-  console.log(posts[0]);
 
   return (
     <main className="main">
