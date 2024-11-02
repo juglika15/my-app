@@ -1,10 +1,13 @@
-import Header from '../Header/Header';
-import Footer from '../Footer/Footer';
-import '../index.css';
+import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
+import '../global.css';
 
 export const metadata = {
   title: 'Dune',
   description: 'Web site created with Next.js.',
+  icons: {
+    icon: './icon.png',
+  },
 };
 
 export default function RootLayout({ children }) {

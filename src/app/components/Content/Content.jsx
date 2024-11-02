@@ -1,14 +1,14 @@
 import './Content.css';
 import Item from './Item/Item';
-import boxOfPainImg from '../assets/images/dune-boxofpain.jpg';
-import crysknifeImg from '../assets/images/dune-crysknife.jpg';
-import gogglesImg from '../assets/images/dune-goggles.jpg';
-import maskImg from '../assets/images/dune-mask.jpg';
-import ringImg from '../assets/images/dune-ring.jpg';
-import shieldImg from '../assets/images/dune-shield.jpg';
-import spiceImg from '../assets/images/dune-spice.jpg';
-import stillsuitImg from '../assets/images/dune-stillsuit.jpg';
-import thumperImg from '../assets/images/dune-thumper.jpg';
+import boxOfPainImg from '../../../../public/assets/images/dune-boxofpain.jpg';
+import crysknifeImg from '../../../../public/assets/images/dune-crysknife.jpg';
+import gogglesImg from '../../../../public/assets/images/dune-goggles.jpg';
+import maskImg from '../../../../public/assets/images/dune-mask.jpg';
+import ringImg from '../../../../public/assets/images/dune-ring.jpg';
+import shieldImg from '../../../../public/assets/images/dune-shield.jpg';
+import spiceImg from '../../../../public/assets/images/dune-spice.jpg';
+import stillsuitImg from '../../../../public/assets/images/dune-stillsuit.jpg';
+import thumperImg from '../../../../public/assets/images/dune-thumper.jpg';
 
 const items = [
   {
