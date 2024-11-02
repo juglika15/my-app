@@ -79,7 +79,7 @@
 #productPage .slider {
   aspect-ratio: 2/1;
   position: relative;
-  background-image: url(../../../assets/images/cool-background.png);
+  background-image: url(../../../../public/assets/images/cool-background.png);
   border-radius: 16px;
 }
 #productPage .image {

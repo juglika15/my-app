@@ -1,8 +1,8 @@
 'use client';
 
-import usePosts from '../../assets/hooks/usePosts';
+import usePosts from '../hooks/usePosts';
 import Blog from './Blog';
-import Spinner from '../../assets/spinner/spinner';
+import Spinner from '../spinner/spinner';
 
 export default function BlogList() {
   const { posts, loading } = usePosts();

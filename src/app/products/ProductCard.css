@@ -1,4 +1,4 @@
-.moreCardBtn{
+.moreCardBtn {
   margin-left: 20px;
   text-decoration: none;
   color: rgb(0, 0, 0);
@@ -6,7 +6,7 @@
 
 .pagination {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   align-items: center;
   background-color: #f9f0db;
 }

@@ -5,9 +5,6 @@ import '../global.css';
 export const metadata = {
   title: 'Dune',
   description: 'Web site created with Next.js.',
-  icons: {
-    icon: './icon.png',
-  },
 };
 
 export default function RootLayout({ children }) {

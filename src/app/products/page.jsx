@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react';
 import { ProductList } from './ProductList';
 import './ProductCard.css';
-import Spinner from '../../assets/spinner/spinner';
+import Spinner from '../spinner/spinner';
 
 const productsURL = 'https://dummyjson.com/products';
 
