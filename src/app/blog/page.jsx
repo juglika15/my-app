@@ -1,11 +1,9 @@
-'use client';
-
-import usePosts from '../hooks/usePosts';
-import Blog from './Blog';
+import useFetchPosts from '../hooks/useFetchPosts';
+import Post from './post';
 import Spinner from '../spinner/spinner';
 
-export default function BlogList() {
-  const { posts, loading } = usePosts();
+export default async function PostList() {
+  const { posts, loading } = await useFetchPosts();
 
   return (
     <main className="main">
@@ -16,7 +14,7 @@ export default function BlogList() {
         </>
       )}
       {posts.map((post) => (
-        <Blog blog={post} key={post.id} />
+        <Post post={post} key={post.id} />
       ))}
     </main>
   );

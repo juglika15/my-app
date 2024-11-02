@@ -13,7 +13,7 @@ export default function Products() {
   const [loading, setLoading] = useState(true);
 
   const itemsPerPage = 9;
-
+  console.log(1);
   useEffect(() => {
     async function fetchProducts() {
       setLoading(true);

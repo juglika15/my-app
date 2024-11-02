@@ -1,4 +1,4 @@
-.blog-item {
+.post-item {
   display: flex;
   align-items: center;
   gap: 1.25rem;
@@ -8,46 +8,46 @@
   border-radius: 0.5rem;
 }
 
-.blog-item:nth-child(even) {
+.post-item:nth-child(even) {
   flex-direction: row-reverse;
 }
 
-.blog-item img {
+.post-item img {
   cursor: pointer;
   height: auto;
   border-radius: 0.5rem;
 }
 
-.blog-content {
+.post-content {
   max-width: 37.5rem;
 }
 
-.blog-title {
+.post-title {
   font-size: 1.5rem;
   margin-bottom: 1.5rem;
 }
 
-.blog-preview {
+.post-preview {
   font-size: 1rem;
   margin-bottom: 0.6rem;
 }
 
-.blog-author {
+.post-author {
   font-weight: bold;
   padding-bottom: 0.625rem;
 }
 
-.blog-tags {
+.post-tags {
   background-color: #e0e0e0;
   padding: 0.3125rem;
   border-radius: 0.3125rem;
 }
 
-.blog-button {
+.post-button {
   padding: 0.625rem 1.25rem;
 }
 
-.blog-views {
+.post-views {
   margin: 0.625rem 0;
 }
 

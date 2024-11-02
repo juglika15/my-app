@@ -1,4 +1,4 @@
-import '../blog.css';
+import '../post.css';
 const fetchPost = async (id) => {
   const res = await fetch(`https://dummyjson.com/posts/${id}`);
   if (!res.ok) {
