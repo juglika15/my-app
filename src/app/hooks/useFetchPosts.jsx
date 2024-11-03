@@ -1,18 +1,21 @@
 async function useFetchPosts() {
+  let posts = [];
+  let loading = false;
+  let error = null;
+
   try {
-    const loading = false;
+    const response = await fetch('https://dummyjson.com/posts');
 
-    const res = await fetch('https://dummyjson.com/posts');
-
-    if (!res.ok) {
-      throw new Error('Failed to fetch posts');
+    if (!response.ok) {
+      throw new Error('Failed to fetch posts data');
     }
-    const data = await res.json();
-    const posts = data.posts;
-    return { posts, loading };
-  } catch (error) {
-    return { posts: [], loading };
+
+    const data = await response.json();
+    posts = data.posts;
+  } catch (err) {
+    error = err.message;
   }
+  return { posts, loading, error };
 }
 
 export default useFetchPosts;
