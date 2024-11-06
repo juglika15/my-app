@@ -1,6 +1,5 @@
 async function useFetchPosts() {
   let posts = [];
-  let loading = false;
   let error = null;
 
   try {
@@ -15,7 +14,7 @@ async function useFetchPosts() {
   } catch (err) {
     error = err.message;
   }
-  return { posts, loading, error };
+  return { posts, error };
 }
 
 export default useFetchPosts;

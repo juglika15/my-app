@@ -1,11 +1,13 @@
-async function useFetchProducts() {
-  let loading = false;
+async function useFetchProducts(currentPage = 1) {
   let products = [];
   let error = null;
 
+  const itemsPerPage = 15;
+  const productsURL = 'https://dummyjson.com/products';
+
   try {
     const response = await fetch(
-      `https://dummyjson.com/products?limit=51&skip=0`
+      `${productsURL}?limit=${itemsPerPage}&skip=${(currentPage - 1) * itemsPerPage}`
     );
 
     if (!response.ok) {
@@ -18,6 +20,6 @@ async function useFetchProducts() {
     error = err.message;
   }
 
-  return { products, loading, error };
+  return { products, error };
 }
 export default useFetchProducts;
