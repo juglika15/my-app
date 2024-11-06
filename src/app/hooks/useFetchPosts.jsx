@@ -1,6 +1,5 @@
 async function useFetchPosts() {
   let posts = [];
-  let error = null;
 
   try {
     const response = await fetch('https://dummyjson.com/posts');
@@ -12,9 +11,9 @@ async function useFetchPosts() {
     const data = await response.json();
     posts = data.posts;
   } catch (err) {
-    error = err.message;
+    console.error(err);
   }
-  return { posts, error };
+  return { posts };
 }
 
 export default useFetchPosts;

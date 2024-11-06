@@ -1,17 +1,12 @@
-import styles from './productPage.css';
+import './productPage.css';
 import Link from 'next/link';
 import ImageSlider from '../../utils/imageSlider';
 import QuantitySelector from '../../utils/quantitySelector';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar, faStarHalfAlt } from '@fortawesome/free-solid-svg-icons';
+import useFetchProduct from '../../hooks/useFetchProduct';
+import { notFound } from 'next/navigation';
 
-const fetchProduct = async (id) => {
-  const res = await fetch(`https://dummyjson.com/products/${id}`);
-  if (!res.ok) {
-    throw new Error('Failed to fetch product');
-  }
-  return res.json();
-};
 const renderStars = (rating) => {
   const roundedRating = Math.round(rating * 2) / 2; // Round to nearest 0.5
   const fullStars = Math.floor(roundedRating); // Get the full star count
@@ -40,16 +35,13 @@ const formatDate = (dateString) => {
   });
 };
 
-export async function generateStaticParams() {
-  const res = await fetch('https://dummyjson.com/products?limit=0&skip=0'); // Adjust the URL if needed
-  const { products } = await res.json(); // Assuming the API returns an array of products
-  return products.map((product) => ({
-    id: product.id.toString(), // Ensure id is a string
-  }));
-}
 export default async function ProductPage({ params }) {
-  const { id } = params; // Get the ID from URL parameters
-  const product = await fetchProduct(id); // Fetch product details based on ID
+  const { id } = params;
+  const product = await useFetchProduct(id);
+
+  if (!product.id) {
+    notFound();
+  }
 
   return (
     <div id="productPage">

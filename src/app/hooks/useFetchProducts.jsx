@@ -1,6 +1,5 @@
 async function useFetchProducts(currentPage = 1) {
   let products = [];
-  let error = null;
 
   const itemsPerPage = 15;
   const productsURL = 'https://dummyjson.com/products';
@@ -17,9 +16,9 @@ async function useFetchProducts(currentPage = 1) {
     const data = await response.json();
     products = data.products;
   } catch (err) {
-    error = err.message;
+    console.error(err);
   }
 
-  return { products, error };
+  return { products };
 }
 export default useFetchProducts;
