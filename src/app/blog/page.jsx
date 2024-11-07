@@ -2,7 +2,7 @@ import useFetchPosts from '../hooks/useFetchPosts';
 import Post from './post';
 
 export default async function PostList() {
-  const { posts } = await useFetchPosts();
+  const posts = await useFetchPosts();
 
   return (
     <main className="main">

@@ -13,7 +13,7 @@ async function useFetchPosts() {
   } catch (err) {
     console.error(err);
   }
-  return { posts };
+  return posts;
 }
 
 export default useFetchPosts;

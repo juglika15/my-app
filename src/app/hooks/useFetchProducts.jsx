@@ -1,24 +1,22 @@
-async function useFetchProducts(currentPage = 1) {
+async function useFetchProducts(productsURL, itemsPerPage) {
   let products = [];
-
-  const itemsPerPage = 15;
-  const productsURL = 'https://dummyjson.com/products';
+  let totalPages = 0;
 
   try {
-    const response = await fetch(
-      `${productsURL}?limit=${itemsPerPage}&skip=${(currentPage - 1) * itemsPerPage}`
-    );
+    const response = await fetch(productsURL);
 
     if (!response.ok) {
       throw new Error('Failed to fetch products data');
     }
 
     const data = await response.json();
+
+    totalPages = Math.ceil(data.total / itemsPerPage);
     products = data.products;
   } catch (err) {
     console.error(err);
   }
 
-  return { products };
+  return { products, totalPages };
 }
 export default useFetchProducts;
