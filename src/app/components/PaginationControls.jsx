@@ -1,38 +1,60 @@
 'use client';
 
-import { useRouter, useSearchParams } from 'next/navigation';
+import { usePathname, useRouter, useSearchParams } from 'next/navigation';
+import { useMemo } from 'react';
+
 const PaginationControls = ({ totalPages }) => {
   const router = useRouter();
   const searchParams = useSearchParams();
+  const pathname = usePathname();
 
-  const currentPage = searchParams.get('page') ?? '1';
+  const currentPage = useMemo(
+    () => searchParams.get('page') ?? '1',
+    [searchParams]
+  );
   const itemsPerPage = searchParams.get('itemsPerPage') ?? '15';
 
+  const newSearchParams = useMemo(
+    () => new URLSearchParams(searchParams),
+    [searchParams]
+  );
+
+  const navigateToPage = (page) => {
+    newSearchParams.set('page', page);
+    newSearchParams.set('itemsPerPage', itemsPerPage);
+
+    router.push(`${pathname}?${newSearchParams.toString()}`);
+  };
+
   const handleNextPage = () => {
-    if (currentPage <= totalPages) {
-      router.push(
-        `?page=${Number(currentPage) + 1}&itemsPerPage=${itemsPerPage}`
-      );
+    if (currentPage < totalPages) {
+      navigateToPage(Number(currentPage) + 1);
     }
   };
 
   const handlePreviousPage = () => {
     if (currentPage > 1) {
-      router.push(
-        `?page=${Number(currentPage) - 1}&itemsPerPage=${itemsPerPage}`
-      );
+      navigateToPage(Number(currentPage) - 1);
     }
   };
 
   return (
     <div className="pagination">
-      <button onClick={handlePreviousPage} disabled={currentPage < 2}>
+      <button
+        onClick={handlePreviousPage}
+        disabled={currentPage <= 1}
+        aria-label="Previous Page"
+      >
         Previous
       </button>
       <span>
         Page {currentPage} of {totalPages}
       </span>
-      <button onClick={handleNextPage} disabled={currentPage == totalPages}>
+      <button
+        onClick={handleNextPage}
+        disabled={currentPage >= totalPages}
+        aria-label="Next Page"
+      >
         Next
       </button>
     </div>
