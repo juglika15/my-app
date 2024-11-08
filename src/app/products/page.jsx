@@ -41,9 +41,19 @@ export default function Products() {
     fetchProducts();
   }, [productsURL, itemsPerPage]);
 
+  function handleDelete(id) {
+    setProducts((curProducts) =>
+      curProducts.filter((product) => product.id !== id)
+    );
+  }
+
   return (
     <div>
-      <ProductList products={products} totalPages={totalPages} />
+      <ProductList
+        products={products}
+        totalPages={totalPages}
+        onDelete={handleDelete}
+      />
     </div>
   );
 }
