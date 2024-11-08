@@ -2,7 +2,7 @@
 
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import './FilterProducts.css';
-import { useMemo } from 'react';
+import { useEffect, useMemo } from 'react';
 import { useDebouncedCallback } from 'use-debounce';
 
 const FilterProducts = () => {
@@ -10,6 +10,10 @@ const FilterProducts = () => {
   const router = useRouter();
   const pathname = usePathname();
   const sortType = searchParams.get('sortBy') ?? '';
+
+  useEffect(() => {
+    router.push(`${pathname}`);
+  }, [router]);
 
   const sortOptions = [
     { name: 'Not sorted', value: '' },
@@ -31,8 +35,11 @@ const FilterProducts = () => {
   }
 
   const handleSearch = useDebouncedCallback((e) => {
+    if (memoizedSearchParams.get('page') > 1) {
+      memoizedSearchParams.set('page', '1');
+    }
     const searchValue = e.target.value;
-    memoizedSearchParams.set('search', e.target.value);
+    memoizedSearchParams.set('search', searchValue);
     router.push(`${pathname}?${memoizedSearchParams.toString()}`);
   }, 500);
 
