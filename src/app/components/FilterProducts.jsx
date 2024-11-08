@@ -19,22 +19,19 @@ const FilterProducts = () => {
     { name: 'Price: High to Low', value: 'price-desc' },
   ];
 
-  // const memoizedSearchParams = useMemo(
-  //   () => new URLSearchParams(searchParams),
-  //   [searchParams]
-  // );
+  const memoizedSearchParams = useMemo(
+    () => new URLSearchParams(searchParams),
+    [searchParams]
+  );
 
   function handleSortChange(e) {
-    const memoizedSearchParams = new URLSearchParams(searchParams);
     const sortOption = e.target.value;
     memoizedSearchParams.set('sortBy', sortOption);
     router.push(`${pathname}?${memoizedSearchParams.toString()}`);
   }
 
   const handleSearch = useDebouncedCallback((e) => {
-    const memoizedSearchParams = new URLSearchParams(searchParams);
     const searchValue = e.target.value;
-    console.log(searchValue);
     memoizedSearchParams.set('search', e.target.value);
     router.push(`${pathname}?${memoizedSearchParams.toString()}`);
   }, 500);
