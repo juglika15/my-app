@@ -1,8 +1,20 @@
+'use client';
+
+import { useEffect, useState } from 'react';
 import useFetchPosts from '../hooks/useFetchPosts';
 import Post from './post';
 
-export default async function PostList() {
-  const posts = await useFetchPosts();
+export default function PostList() {
+  const [posts, setPosts] = useState([]);
+
+  useEffect(() => {
+    async function fetchPosts() {
+      const posts = await useFetchPosts();
+
+      setPosts(posts);
+    }
+    fetchPosts();
+  }, []);
 
   return (
     <main className="main">
