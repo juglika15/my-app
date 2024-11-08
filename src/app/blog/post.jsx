@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import './post.css';
-export default function Post({ post }) {
+import DeleteButton from '../components/Buttons/DeleteButton';
+
+export default function Post({ post, onDelete }) {
   return (
     <div className="post-item">
       <div className="post-content">
@@ -27,6 +29,7 @@ export default function Post({ post }) {
         <Link href={`/blog/${post.id}`} className="moreCardBtn">
           more details
         </Link>
+        <DeleteButton id={post.id} onDelete={onDelete} />
       </div>
     </div>
   );

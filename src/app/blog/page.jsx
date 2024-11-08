@@ -16,10 +16,14 @@ export default function PostList() {
     fetchPosts();
   }, []);
 
+  function handleDelete(id) {
+    setPosts((curPosts) => curPosts.filter((post) => post.id !== id));
+  }
+
   return (
     <main className="main">
       {posts.map((post) => (
-        <Post post={post} key={post.id} />
+        <Post post={post} key={post.id} onDelete={handleDelete} />
       ))}
     </main>
   );
