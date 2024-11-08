@@ -8,10 +8,10 @@ export default async function Products({ searchParams }) {
   const itemsPerPage = searchParams['itemsPerPage'] ?? '15';
   const sortType = searchParams?.sortBy ?? '';
   const [sortByValue, orderValue] = sortType.split('-');
+  const searchValue = searchParams['search'] ?? '';
 
   const productsURL = useMemo(() => {
-    let url = `https://dummyjson.com/products?limit=${itemsPerPage}&skip=${(currentPage - 1) * itemsPerPage}&sortBy=${sortByValue}&order=${orderValue}`;
-
+    let url = `https://dummyjson.com/products/search?q=${searchValue}&limit=${itemsPerPage}&skip=${(currentPage - 1) * itemsPerPage}&sortBy=${sortByValue}&order=${orderValue}`;
     return url;
   }, [currentPage, itemsPerPage, sortByValue, orderValue]);
 

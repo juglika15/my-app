@@ -2,13 +2,13 @@ import ProductCard from './ProductCard';
 import '../components/Content/Content.css';
 import '../components/Content/Item/Item.css';
 import PaginationControls from '../components/PaginationControls';
-import SortProducts from '../components/SortProducts';
+import FilterProducts from '../components/FilterProducts';
 
 export default function ProductList({ products, totalPages }) {
   return (
     <main className="main">
       <h2>Item Shop</h2>
-      <SortProducts />
+      <FilterProducts />
       <div className="items">
         {products.map((product) => (
           <ProductCard key={product.id} product={product} />

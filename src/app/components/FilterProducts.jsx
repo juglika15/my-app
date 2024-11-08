@@ -1,10 +1,11 @@
 'use client';
 
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
-import './SortProducts.css';
+import './FilterProducts.css';
 import { useMemo } from 'react';
+import { useDebouncedCallback } from 'use-debounce';
 
-const SortProducts = () => {
+const FilterProducts = () => {
   const searchParams = useSearchParams();
   const router = useRouter();
   const pathname = usePathname();
@@ -29,8 +30,25 @@ const SortProducts = () => {
     router.push(`${pathname}?${memoizedSearchParams.toString()}`);
   }
 
+  const handleSearch = useDebouncedCallback((e) => {
+    const searchValue = e.target.value;
+    console.log(searchValue);
+    memoizedSearchParams.set('search', e.target.value);
+    router.push(`${pathname}?${memoizedSearchParams.toString()}`);
+  }, 500);
+
   return (
-    <div className="sort-container">
+    <div className="filter-container">
+      <label htmlFor="search" className="search-label">
+        Search
+      </label>
+      <input
+        type="text"
+        id="search"
+        className="search-input"
+        placeholder="Search product..."
+        onChange={handleSearch}
+      />
       <label htmlFor="sort-select" className="sort-label">
         Sort by
       </label>
@@ -51,4 +69,4 @@ const SortProducts = () => {
   );
 };
 
-export default SortProducts;
+export default FilterProducts;
