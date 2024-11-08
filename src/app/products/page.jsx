@@ -15,22 +15,14 @@ export default async function Products({ searchParams }) {
     return url;
   }, [currentPage, itemsPerPage, sortByValue, orderValue]);
 
-  try {
-    const { products = [], totalPages } = await useFetchProducts(
-      productsURL,
-      itemsPerPage
-    );
+  const { products, totalPages } = await useFetchProducts(
+    productsURL,
+    itemsPerPage
+  );
 
-    return (
-      <div>
-        {products.length ? (
-          <ProductList products={products} totalPages={totalPages} />
-        ) : (
-          <p>No products found.</p>
-        )}
-      </div>
-    );
-  } catch (error) {
-    return <p>Error loading products. Please try again later.</p>;
-  }
+  return (
+    <div>
+      <ProductList products={products} totalPages={totalPages} />
+    </div>
+  );
 }

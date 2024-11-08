@@ -11,7 +11,7 @@ async function useFetchProducts(productsURL, itemsPerPage) {
 
     const data = await response.json();
 
-    totalPages = Math.ceil(data.total / itemsPerPage);
+    totalPages = Math.ceil(data.total / itemsPerPage) || 1;
     products = data.products;
   } catch (err) {
     console.error(err);
