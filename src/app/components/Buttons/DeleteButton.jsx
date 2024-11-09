@@ -8,7 +8,7 @@ export default function DeleteButton({ id, onDelete }) {
         onDelete(id);
       }}
     >
-      Delete
+      delete
     </button>
   );
 }

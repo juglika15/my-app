@@ -1,19 +1,19 @@
-.delete-btn {
+.edit-btn {
   margin-left: 0.5rem;
   padding: 0.4rem 0.8rem;
-  background-color: orangered;
-  color: white;
+  background-color: white;
+  color: black;
   border-radius: 0.25rem;
-  border: 1px solid orangered;
+  border: 1px solid black;
   transition:
     background-color 0.5s ease,
     color 0.5s ease;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-.delete-btn:hover {
-  background-color: white;
-  color: black;
+.edit-btn:hover {
+  background-color: gray;
+  color: white;
   border: 1px solid black;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
