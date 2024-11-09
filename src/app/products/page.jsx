@@ -4,6 +4,7 @@ import './ProductCard.css';
 import useFetchProducts from '../hooks/useFetchProducts';
 import { useEffect, useMemo, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
+import EditProductForm from '../components/Forms/EditProductForm';
 
 export default function Products() {
   const searchParams = useSearchParams();
@@ -27,6 +28,8 @@ export default function Products() {
 
   const [products, setProducts] = useState([]);
   const [totalPages, setTotalPages] = useState(0);
+  const [activeProduct, setActiveProduct] = useState(null);
+  const [addProductActive, setAddProductActive] = useState(false);
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -53,7 +56,15 @@ export default function Products() {
         products={products}
         totalPages={totalPages}
         onDelete={handleDelete}
+        setActiveProduct={setActiveProduct}
       />
+      {activeProduct && (
+        <EditProductForm
+          product={activeProduct}
+          setProducts={setProducts}
+          setActiveProduct={setActiveProduct}
+        />
+      )}
     </div>
   );
 }

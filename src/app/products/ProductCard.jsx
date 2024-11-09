@@ -1,8 +1,9 @@
 import './ProductCard.css';
 import Link from 'next/link';
 import DeleteButton from '../components/Buttons/DeleteButton';
+import EditButton from '../components/Buttons/EditButton';
 
-export default function ProductCard({ product, onDelete }) {
+export default function ProductCard({ product, onDelete, setActiveProduct }) {
   return (
     <div className="item">
       <div
@@ -24,10 +25,11 @@ export default function ProductCard({ product, onDelete }) {
       <div>${product.price}</div>
       <p className="item-desc">{product.description}</p>
       <div>
-        <button className="button">Add to Cart</button>
+        {/* <button className="button">Add to Cart</button> */}
         <Link href={`/products/${product.id}`} className="moreCardBtn">
-          more details
+          details
         </Link>
+        <EditButton item={product} setActive={setActiveProduct} />
         <DeleteButton id={product.id} onDelete={onDelete} />
       </div>
     </div>

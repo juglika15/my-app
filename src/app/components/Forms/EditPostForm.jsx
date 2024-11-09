@@ -21,7 +21,7 @@ export default function EditPostForm({ post, setPosts, setActivePost }) {
           &times;
         </button>
         <label htmlFor="title" className="label">
-          Title
+          title:
         </label>
         <input
           type="text"
@@ -33,7 +33,7 @@ export default function EditPostForm({ post, setPosts, setActivePost }) {
         />
 
         <label htmlFor="body" className="label">
-          Text
+          text:
         </label>
         <textarea
           name="body"
