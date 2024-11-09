@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './Form.css';
 
-export default function EditPostForm({ setPosts, setAddActive }) {
+export default function AddPostForm({ setPosts, setAddActive }) {
   const [newPost, setNewPosts] = useState({
     title: '',
     body: '',
@@ -61,7 +61,7 @@ export default function EditPostForm({ setPosts, setAddActive }) {
         <button
           type="submit"
           className="save-btn"
-          disabled={newPost.title === '' || !newPost.body}
+          disabled={!newPost.title || !newPost.body}
         >
           save
         </button>

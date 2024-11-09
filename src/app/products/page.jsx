@@ -5,6 +5,7 @@ import useFetchProducts from '../hooks/useFetchProducts';
 import { useEffect, useMemo, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
 import EditProductForm from '../components/Forms/EditProductForm';
+import AddProductForm from '../components/Forms/AddProductsForm';
 
 export default function Products() {
   const searchParams = useSearchParams();
@@ -49,7 +50,7 @@ export default function Products() {
       curProducts.filter((product) => product.id !== id)
     );
   }
-
+  console.log(products[0]);
   return (
     <div>
       <ProductList
@@ -57,7 +58,14 @@ export default function Products() {
         totalPages={totalPages}
         onDelete={handleDelete}
         setActiveProduct={setActiveProduct}
+        setAddProductActive={setAddProductActive}
       />
+      {addProductActive && (
+        <AddProductForm
+          setProducts={setProducts}
+          setAddProductActive={setAddProductActive}
+        />
+      )}
       {activeProduct && (
         <EditProductForm
           product={activeProduct}
