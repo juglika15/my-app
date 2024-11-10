@@ -12,7 +12,7 @@ async function Header() {
     <header className="header">
       <h1>Dune</h1>
       <div className="nav">
-        <nav>
+        <nav className="header-nav">
           <ul>
             <li>
               <Link href="/" className="navlink">
@@ -46,8 +46,7 @@ async function Header() {
             </li>
           </ul>
         </nav>
-        <div>
-          {' '}
+        <div className="logg">
           {user ? (
             <>
               <span className="hello">hello {user.name.split(' ')[0]}</span>{' '}

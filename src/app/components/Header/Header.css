@@ -18,9 +18,10 @@ h1 {
 .nav {
   display: flex;
   width: 90%;
+  align-items: center;
 }
 
-nav {
+.header-nav {
   padding-left: 18%;
   display: flex;
   justify-content: center;
