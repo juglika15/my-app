@@ -20,11 +20,13 @@
 .name input {
   white-space: nowrap;
   width: 100%;
+  background-color: white;
 }
 
 .form label input {
   height: 1.7rem;
   font-size: 0.9rem;
+  background-color: white;
 }
 
 .profile {

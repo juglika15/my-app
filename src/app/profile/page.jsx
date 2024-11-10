@@ -22,6 +22,7 @@ export default async function Profile() {
               type="text"
               name="first name"
               value={user?.name.split(' ')[0]}
+              disabled
             />
           </label>
           <label>
@@ -30,13 +31,14 @@ export default async function Profile() {
               type="text"
               name="last name"
               value={user?.name.split(' ')[1]}
+              disabled
             />
           </label>
         </div>
 
         <label>
           Email:
-          <input type="email" name="email" value={user?.email} />
+          <input type="email" name="email" value={user?.email} disabled />
         </label>
       </form>
     </div>
