@@ -50,7 +50,7 @@ export default function Products() {
       curProducts.filter((product) => product.id !== id)
     );
   }
-  console.log(products[0]);
+
   return (
     <div>
       <ProductList

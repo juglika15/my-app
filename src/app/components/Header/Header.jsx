@@ -1,44 +1,63 @@
 import Link from 'next/link';
 import './Header.css';
+import { getSession } from '@auth0/nextjs-auth0';
+import Login from '../../login';
+import Logout from '../../logout';
 
-function Header() {
+async function Header() {
+  const session = await getSession();
+  const user = session?.user;
+
   return (
     <header className="header">
       <h1>Dune</h1>
-      <nav>
-        <ul>
-          <li>
-            <Link href="/" className="navlink">
-              Home
-            </Link>
-          </li>
-          <li>
-            <Link href="/contact" className="navlink">
-              Contact
-            </Link>
-          </li>
-          <li>
-            <Link href="/blog" className="navlink">
-              Blog
-            </Link>
-          </li>
-          <li>
-            <Link href="/products" className="navlink">
-              Products
-            </Link>
-          </li>
-          <li>
-            <Link href="/about" className="navlink">
-              About
-            </Link>
-          </li>
-          <li>
-            <Link href="/profile" className="navlink">
-              Profile
-            </Link>
-          </li>
-        </ul>
-      </nav>
+      <div className="nav">
+        <nav>
+          <ul>
+            <li>
+              <Link href="/" className="navlink">
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link href="/contact" className="navlink">
+                Contact
+              </Link>
+            </li>
+            <li>
+              <Link href="/blog" className="navlink">
+                Blog
+              </Link>
+            </li>
+            <li>
+              <Link href="/products" className="navlink">
+                Products
+              </Link>
+            </li>
+            <li>
+              <Link href="/about" className="navlink">
+                About
+              </Link>
+            </li>
+            <li>
+              <Link href="/profile" className="navlink">
+                Profile
+              </Link>
+            </li>
+          </ul>
+        </nav>
+        <div>
+          {' '}
+          {user ? (
+            <>
+              <span className="hello">hello {user.name.split(' ')[0]}</span>{' '}
+              <Logout />
+            </>
+          ) : (
+            <Login />
+          )}
+        </div>
+      </div>
     </header>
   );
 }

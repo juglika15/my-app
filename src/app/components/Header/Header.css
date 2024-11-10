@@ -7,17 +7,32 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.5rem;
+  gap: 1rem;
 }
 
 h1 {
   font-size: 3rem;
+  margin: 0;
+}
+
+.nav {
+  display: flex;
+  width: 90%;
+}
+
+nav {
+  padding-left: 18%;
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
 }
 
 ul {
   list-style: none;
   display: flex;
-  gap: 0.5rem;
+  gap: 1rem;
+  padding: 0;
+  margin: 0;
 }
 
 .navlink {
@@ -31,4 +46,9 @@ ul {
 .active {
   background-color: blanchedalmond;
   color: black;
+}
+
+.hello {
+  color: white;
+  margin-right: 1rem;
 }

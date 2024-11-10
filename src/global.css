@@ -54,3 +54,22 @@ body {
   z-index: 1;
   box-shadow: 0rem 1rem 1rem rgba(0, 0, 0, 0.2);
 }
+
+.log {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.log-btn {
+  background-color: white;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  transition:
+    background-color 0.5s ease,
+    color 0.5s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.log-btn:hover {
+  background-color: black;
+}
