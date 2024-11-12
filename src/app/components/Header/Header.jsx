@@ -3,13 +3,14 @@ import './Header.css';
 import { getSession } from '@auth0/nextjs-auth0';
 import Login from '../../login';
 import Logout from '../../logout';
+import ThemeSwitch from '../ThemeSwitch';
 
 async function Header() {
   const session = await getSession();
   const user = session?.user;
 
   return (
-    <header className="header">
+    <header className="header dark:bg-dark">
       <h1>Dune</h1>
       <div className="nav">
         <nav className="header-nav">
@@ -47,6 +48,8 @@ async function Header() {
           </ul>
         </nav>
         <div className="logg">
+          <ThemeSwitch />
+
           {user ? (
             <>
               <span className="hello">hello {user.name.split(' ')[0]}</span>{' '}
