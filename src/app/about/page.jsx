@@ -1,7 +1,7 @@
 import './about.css';
 export default function About() {
   return (
-    <main className="main">
+    <main className="main dark:bg-orange-300">
       <h2>About The Project</h2>
       <p className="info">
         This is a React project designed to demonstrate a wide range of

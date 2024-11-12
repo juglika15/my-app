@@ -39,7 +39,7 @@ const PaginationControls = ({ totalPages }) => {
   };
 
   return (
-    <div className="pagination">
+    <div className="pagination dark:bg-orange-300">
       <button
         onClick={handlePreviousPage}
         disabled={currentPage <= 1}

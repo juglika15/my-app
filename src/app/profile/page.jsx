@@ -6,8 +6,8 @@ export default async function Profile() {
   const user = session?.user;
 
   return (
-    <div className="main">
-      <form className="form">
+    <div className="main dark:bg-orange-300">
+      <form className="form dark:bg-cyan-700">
         <img
           className="profile"
           src={user?.picture}

@@ -26,7 +26,7 @@ export default function PostList() {
   }
 
   return (
-    <main className="main">
+    <main className="main dark:bg-orange-300">
       <AddButton name={'Post'} setAddActive={setAddActive} />
       {posts.map((post) => (
         <Post

@@ -37,7 +37,6 @@ ul {
 }
 
 .navlink {
-  color: white;
   text-decoration: none;
   padding: 0.3rem;
   border-radius: 0.5rem;
@@ -50,6 +49,5 @@ ul {
 }
 
 .hello {
-  color: white;
   margin-right: 1rem;
 }

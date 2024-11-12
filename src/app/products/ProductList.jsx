@@ -1,6 +1,6 @@
 import ProductCard from './ProductCard';
 import '../components/Content/Content.css';
-import '../components/Content/Item/Item.css';
+import '../components/Content/Item.css';
 import PaginationControls from '../components/PaginationControls';
 import FilterProducts from '../components/FilterProducts';
 import AddButton from '../components/Buttons/AddButton';
@@ -13,7 +13,7 @@ export default function ProductList({
   setAddProductActive,
 }) {
   return (
-    <main className="main">
+    <main className="main dark:bg-orange-300">
       <h2>Item Shop</h2>
       <AddButton name={'Product'} setAddActive={setAddProductActive} />
       <FilterProducts />

@@ -52,14 +52,9 @@ body {
   box-shadow: 0rem 1rem 1rem rgba(0, 0, 0, 0.2);
 }
 
-.log {
-  color: var(--primary-color);
-  text-decoration: none;
-}
-
 .log-btn {
   background-color: white;
-  padding: 0.3rem;
+  padding: 0.2rem;
   border-radius: 0.25rem;
   transition:
     background-color 0.5s ease,
@@ -69,4 +64,19 @@ body {
 
 .log-btn:hover {
   background-color: black;
+}
+
+button:disabled {
+  background-color: #ccc;
+  color: #666;
+  cursor: not-allowed;
+  opacity: 0.6;
+  box-shadow: none;
+}
+
+input,
+textarea,
+select {
+  background-color: white;
+  color: black;
 }

@@ -1,5 +1,5 @@
 import './Content.css';
-import Item from './Item/Item';
+import Item from './Item';
 import boxOfPainImg from '../../../../public/assets/images/dune-boxofpain.jpg';
 import crysknifeImg from '../../../../public/assets/images/dune-crysknife.jpg';
 import gogglesImg from '../../../../public/assets/images/dune-goggles.jpg';
@@ -60,7 +60,7 @@ const items = [
 
 function Content() {
   return (
-    <main className="main">
+    <main className="main dark:bg-orange-300">
       <h2>Item Shop</h2>
       <div className="items">
         {items.map((item) => (

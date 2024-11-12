@@ -11,7 +11,7 @@ async function Header() {
 
   return (
     <header className="header dark:bg-dark">
-      <h1>Dune</h1>
+      <h1 className="text-4xl font-bold">Dune</h1>
       <div className="nav">
         <nav className="header-nav">
           <ul>

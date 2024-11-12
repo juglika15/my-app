@@ -5,7 +5,7 @@ import EditButton from '../components/Buttons/EditButton';
 
 export default function Post({ post, onDelete, setActivePost }) {
   return (
-    <div className="post-item">
+    <div className="post-item dark:bg-cyan-700">
       <div className="post-content">
         <h3 className="post-title">{post.title}</h3>
         <p className="text-truncate">{post.body}</p>
