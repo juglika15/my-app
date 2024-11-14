@@ -1,0 +1,50 @@
+{
+  "Header": {
+    "home": "Home",
+    "contact": "Contact",
+    "blog": "Blog",
+    "products": "Products",
+    "about": "About",
+    "profile": "Profile"
+  },
+  "Content": {
+    "shop": "Item Shop",
+    "button": "Add to Cart"
+  },
+  "Footer": {
+    "about": "About Us",
+    "contact": "Contact",
+    "profile": "Profile",
+    "services": "Services",
+    "careers": "Careers",
+    "support": "Support"
+  },
+  "Modes": {
+    "dark": "Dark",
+    "light": "Light",
+    "system": "System"
+  },
+  "Auth": {
+    "login": "Login",
+    "logout": "Logout"
+  },
+  "Contact": {
+    "contact": "Contact Us",
+    "phone": "phone",
+    "email": "email",
+    "sendUs": "Send Us a Message"
+  },
+  "Form": {
+    "profile": "Profile",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "email": "Email",
+    "message": "Message",
+    "send": "Send",
+    "write": "Write to us..."
+  },
+  "About": {
+    "about": "About the Project",
+    "text": "This is a React project designed to demonstrate a wide range of essential features in React development. It covers foundational concepts such as component creation, state management, and routing using React Router. Additionally, the project highlights key React features like hooks for managing component state and effects, the use of context for global state management, and the flexibility of JSX for rendering dynamic UIs."
+  }
+}

@@ -1,5 +1,3 @@
-import Header from './components/Header/Header';
-import Footer from './components/Footer/Footer';
 import '../globals.css';
 import { UserProvider } from '@auth0/nextjs-auth0/client';
 import { Providers } from './providers';
@@ -15,9 +13,7 @@ export default function RootLayout({ children }) {
       <UserProvider>
         <body className="cont">
           <Providers>
-            <Header />
             <div id="root">{children}</div>
-            <Footer />
           </Providers>
         </body>
       </UserProvider>
