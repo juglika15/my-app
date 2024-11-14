@@ -8,7 +8,7 @@ import { BsSunFill } from 'react-icons/bs';
 import { useTranslations } from 'next-intl';
 
 const ThemeToggle = () => {
-  const { theme, setTheme } = useTheme();
+  const { theme, setTheme, resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
   const t = useTranslations('Modes');
 
@@ -25,14 +25,16 @@ const ThemeToggle = () => {
   return (
     <div className="relative group">
       <button className="flex items-center gap-2">
-        {options[theme].icon} {options[theme].label}
+        {options[resolvedTheme].icon} {options[resolvedTheme].label}
       </button>
       <div className="absolute left-0 pt-2 flex-col gap-2 bg-gray-100 dark:bg-gray-600 p-2 rounded-md shadow-lg group-hover:block hidden ">
         {Object.entries(options).map(([key, { label, icon }]) => (
           <button
             key={key}
             onClick={() => setTheme(key)}
-            className="flex items-center gap-2 hover:bg-gray-200 dark:hover:bg-gray-900 p-2 rounded w-40"
+            className={`flex items-center gap-2 hover:bg-gray-200 dark:hover:bg-gray-900 p-2 rounded w-40 ${
+              theme === key ? 'bg-gray-200 dark:bg-gray-900' : ''
+            }`}
           >
             {icon} {label}
           </button>
