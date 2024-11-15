@@ -5,8 +5,9 @@ import './ProductCard.css';
 import useFetchProducts from '../../hooks/useFetchProducts';
 import { useEffect, useMemo, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
-import EditProductForm from './../components/Forms/EditProductForm';
-import AddProductForm from './../components/Forms/AddProductsForm';
+import EditProductForm from '../components/Forms/EditProductForm';
+import AddProductForm from '../components/Forms/AddProductsForm';
+import { ProductType } from '../../../types/api';
 
 export default function Products() {
   const searchParams = useSearchParams();
@@ -17,20 +18,20 @@ export default function Products() {
   // const [sortByValue, orderValue] = sortType.split('-');
   // const searchValue = searchParams['search'] ?? '';
 
-  const currentPage = searchParams.get('page') ?? '1';
-  const itemsPerPage = searchParams.get('itemsPerPage') ?? '15';
-  const sortType = searchParams.get('sortBy') ?? '';
-  const [sortByValue, orderValue] = sortType.split('-');
-  const searchValue = searchParams.get('search') ?? '';
+  const currentPage: string = searchParams.get('page') ?? '1';
+  const itemsPerPage: string = searchParams.get('itemsPerPage') ?? '15';
+  const sortType: string = searchParams.get('sortBy') ?? '';
+  const [sortByValue, orderValue]: string[] = sortType.split('-');
+  const searchValue: string = searchParams.get('search') ?? '';
 
   const productsURL = useMemo(() => {
-    let url = `https://dummyjson.com/products/search?q=${searchValue}&limit=${itemsPerPage}&skip=${(currentPage - 1) * itemsPerPage}&sortBy=${sortByValue}&order=${orderValue}`;
+    let url = `https://dummyjson.com/products/search?q=${searchValue}&limit=${itemsPerPage}&skip=${(Number(currentPage) - 1) * Number(itemsPerPage)}&sortBy=${sortByValue}&order=${orderValue}`;
     return url;
   }, [currentPage, itemsPerPage, sortByValue, orderValue, searchValue]);
 
-  const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState<ProductType[] | []>([]);
   const [totalPages, setTotalPages] = useState(0);
-  const [activeProduct, setActiveProduct] = useState(null);
+  const [activeProduct, setActiveProduct] = useState<ProductType | null>(null);
   const [addProductActive, setAddProductActive] = useState(false);
 
   useEffect(() => {
@@ -46,9 +47,9 @@ export default function Products() {
     fetchProducts();
   }, [productsURL, itemsPerPage]);
 
-  function handleDelete(id) {
+  function handleDelete(id: number) {
     setProducts((curProducts) =>
-      curProducts.filter((product) => product.id !== id)
+      curProducts.filter((product: ProductType) => product.id !== id)
     );
   }
 

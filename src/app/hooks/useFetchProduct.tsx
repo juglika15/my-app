@@ -1,16 +1,18 @@
-async function useFetchProduct(id) {
-  let product = {};
+import { ProductType } from '../../types/api';
+
+async function useFetchProduct(id: string): Promise<ProductType | null> {
   try {
     const res = await fetch(`https://dummyjson.com/products/${id}`);
     if (!res.ok) {
       throw new Error('Failed to fetch product');
     }
 
-    product = await res.json();
+    const product = await res.json();
+    return product;
   } catch (err) {
     console.error(err);
+    return null;
   }
-  return product;
 }
 
 export default useFetchProduct;

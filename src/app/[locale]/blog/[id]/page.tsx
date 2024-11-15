@@ -2,11 +2,15 @@ import '../post.css';
 import useFetchPost from '../../../hooks/useFetchPost';
 import { notFound } from 'next/navigation';
 
-export default async function ProductPage({ params }) {
+export default async function ProductPage({
+  params,
+}: {
+  params: { id: string };
+}) {
   const { id } = params;
   const post = await useFetchPost(id);
 
-  if (!post.id) {
+  if (!post?.id) {
     notFound();
   }
 

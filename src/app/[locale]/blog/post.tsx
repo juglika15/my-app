@@ -1,9 +1,18 @@
 import { Link } from '../../../i18n/routing';
 import './post.css';
-import DeleteButton from './../components/Buttons/DeleteButton';
-import EditButton from './../components/Buttons/EditButton';
+import DeleteButton from '../components/Buttons/DeleteButton';
+import EditButton from '../components/Buttons/EditButton';
+import { PostType } from '../../../types/api';
 
-export default function Post({ post, onDelete, setActivePost }) {
+export default function Post({
+  post,
+  onDelete,
+  setActivePost,
+}: {
+  post: PostType;
+  onDelete: (id: number) => void;
+  setActivePost: (post: PostType) => void;
+}) {
   return (
     <div className="post-item dark:bg-cyan-700">
       <div className="post-content">

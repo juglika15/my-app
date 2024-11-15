@@ -7,7 +7,7 @@ import { faStar, faStarHalfAlt } from '@fortawesome/free-solid-svg-icons';
 import useFetchProduct from '../../../hooks/useFetchProduct';
 import { notFound } from 'next/navigation';
 
-const renderStars = (rating) => {
+const renderStars = (rating: number) => {
   const roundedRating = Math.round(rating * 2) / 2; // Round to nearest 0.5
   const fullStars = Math.floor(roundedRating); // Get the full star count
   const hasHalfStar = roundedRating - fullStars === 0.5; // Check if there's a half star
@@ -22,7 +22,7 @@ const renderStars = (rating) => {
   }
   return stars;
 };
-const formatDate = (dateString) => {
+const formatDate = (dateString: string) => {
   const date = new Date(dateString);
   return date.toLocaleDateString('en-US', {
     year: 'numeric',
@@ -35,11 +35,15 @@ const formatDate = (dateString) => {
   });
 };
 
-export default async function ProductPage({ params }) {
+export default async function ProductPage({
+  params,
+}: {
+  params: { id: string };
+}) {
   const { id } = params;
   const product = await useFetchProduct(id);
 
-  if (!product.id) {
+  if (!product?.id) {
     notFound();
   }
 

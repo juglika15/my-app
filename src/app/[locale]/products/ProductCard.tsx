@@ -1,9 +1,18 @@
 import './ProductCard.css';
 import { Link } from '../../../i18n/routing';
-import DeleteButton from './../components/Buttons/DeleteButton';
-import EditButton from './../components/Buttons/EditButton';
+import DeleteButton from '../components/Buttons/DeleteButton';
+import EditButton from '../components/Buttons/EditButton';
+import { ProductType } from '../../../types/api';
 
-export default function ProductCard({ product, onDelete, setActiveProduct }) {
+export default function ProductCard({
+  product,
+  onDelete,
+  setActiveProduct,
+}: {
+  product: ProductType;
+  onDelete: (id: number) => void;
+  setActiveProduct: (product: ProductType) => void;
+}) {
   return (
     <div className="item">
       <div
