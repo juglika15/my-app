@@ -117,7 +117,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "src/app/[locale]/layout.jsx"
+    "src/app/[locale]/layout.tsx"
   ],
   "exclude": ["node_modules"]
 }
