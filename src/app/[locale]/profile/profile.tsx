@@ -1,7 +1,8 @@
 import './profile.css';
 import { useTranslations } from 'next-intl';
+import { Claims } from '@auth0/nextjs-auth0';
 
-export default function Profile({ user }) {
+export default function Profile({ user }: { user: Claims | null }) {
   const t = useTranslations('Form');
   return (
     <div className="main dark:bg-orange-300">
