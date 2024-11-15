@@ -1,5 +1,5 @@
-import './Content.css';
-import Item from './Item';
+import './content.css';
+import Item from './item';
 import boxOfPainImg from '../../../../../public/assets/images/dune-boxofpain.jpg';
 import crysknifeImg from '../../../../../public/assets/images/dune-crysknife.jpg';
 import gogglesImg from '../../../../../public/assets/images/dune-goggles.jpg';

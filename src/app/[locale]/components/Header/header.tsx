@@ -1,5 +1,5 @@
 import { Link } from '../../../../i18n/routing';
-import './Header.css';
+import './header.css';
 import ThemeSwitch from '../ThemeSwitch';
 import { useTranslations } from 'next-intl';
 import User from './user';

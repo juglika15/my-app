@@ -1,7 +1,15 @@
-import './Item.css';
+import './item.css';
 import { useTranslations } from 'next-intl';
 
-export default function Item({ item }) {
+interface Items {
+  item: {
+    name: string;
+    description: string;
+    img: string;
+  };
+}
+
+export default function Item({ item }: Items) {
   const t = useTranslations('Content');
 
   return (

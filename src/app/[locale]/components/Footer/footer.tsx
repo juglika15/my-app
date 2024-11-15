@@ -1,4 +1,4 @@
-import './Footer.css';
+import './footer.css';
 import { Link } from '../../../../i18n/routing';
 import { useTranslations } from 'next-intl';
 
