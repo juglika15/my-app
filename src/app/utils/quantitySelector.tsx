@@ -2,7 +2,13 @@
 
 import { useState } from 'react';
 
-export default function QuantitySelector({ stock, minOrder }) {
+export default function QuantitySelector({
+  stock,
+  minOrder,
+}: {
+  stock: number;
+  minOrder: number;
+}) {
   const [isOpen, setIsOpen] = useState(false);
   const [quantity, setQuantity] = useState(minOrder);
 

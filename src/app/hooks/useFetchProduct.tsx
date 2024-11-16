@@ -1,4 +1,4 @@
-import { ProductType } from '../../types/api';
+import { ProductType } from '../[locale]/types/api';
 
 async function useFetchProduct(id: string): Promise<ProductType | null> {
   try {

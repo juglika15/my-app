@@ -1,5 +1,7 @@
-async function useFetchProducts(productsURL, itemsPerPage) {
-  let products = [];
+import { ProductType } from '../[locale]/types/api';
+
+async function useFetchProducts(productsURL: string, itemsPerPage: number) {
+  let products: ProductType[] = [];
   let totalPages = 0;
 
   try {

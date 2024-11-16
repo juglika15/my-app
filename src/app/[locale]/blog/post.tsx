@@ -1,8 +1,8 @@
 import { Link } from '../../../i18n/routing';
 import './post.css';
 import DeleteButton from '../components/Buttons/DeleteButton';
-import EditButton from '../components/Buttons/EditButton';
-import { PostType } from '../../../types/api';
+import EditPostButton from '../components/Buttons/EditPostButton';
+import { PostType } from '../types/api';
 
 export default function Post({
   post,
@@ -11,7 +11,7 @@ export default function Post({
 }: {
   post: PostType;
   onDelete: (id: number) => void;
-  setActivePost: (post: PostType) => void;
+  setActivePost: React.Dispatch<React.SetStateAction<PostType | null>>;
 }) {
   return (
     <div className="post-item dark:bg-cyan-700">
@@ -39,7 +39,7 @@ export default function Post({
         <Link href={`/blog/${post.id}`} className="moreCardBtn">
           more details
         </Link>
-        <EditButton item={post} setActive={setActivePost} />
+        <EditPostButton post={post} setActive={setActivePost} />
         <DeleteButton id={post.id} onDelete={onDelete} />
       </div>
     </div>

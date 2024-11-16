@@ -1,8 +1,8 @@
 import './ProductCard.css';
 import { Link } from '../../../i18n/routing';
 import DeleteButton from '../components/Buttons/DeleteButton';
-import EditButton from '../components/Buttons/EditButton';
-import { ProductType } from '../../../types/api';
+import EditProductButton from '../components/Buttons/EditProductButton';
+import { ProductType } from '../types/api';
 
 export default function ProductCard({
   product,
@@ -11,7 +11,7 @@ export default function ProductCard({
 }: {
   product: ProductType;
   onDelete: (id: number) => void;
-  setActiveProduct: (product: ProductType) => void;
+  setActiveProduct: React.Dispatch<React.SetStateAction<ProductType | null>>;
 }) {
   return (
     <div className="item">
@@ -38,7 +38,7 @@ export default function ProductCard({
         <Link href={`/products/${product.id}`} className="moreCardBtn">
           details
         </Link>
-        <EditButton item={product} setActive={setActiveProduct} />
+        <EditProductButton product={product} setActive={setActiveProduct} />
         <DeleteButton id={product.id} onDelete={onDelete} />
       </div>
     </div>

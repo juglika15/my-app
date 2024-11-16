@@ -1,6 +1,12 @@
 import './DeleteButton.css';
 
-export default function DeleteButton({ id, onDelete }) {
+export default function DeleteButton({
+  id,
+  onDelete,
+}: {
+  id: number;
+  onDelete: (id: number) => void;
+}) {
   return (
     <button
       className="delete-btn"

@@ -1,6 +1,6 @@
 'use client';
 import { useState } from 'react';
-export default function ImageSlider({ images }) {
+export default function ImageSlider({ images }: { images: string[] }) {
   const [imageIndex, setImageIndex] = useState(0);
 
   function ShowNextImg() {

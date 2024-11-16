@@ -1,4 +1,4 @@
-import { PostType } from '../../types/api';
+import { PostType } from '../[locale]/types/api';
 
 async function useFetchPost(id: string): Promise<PostType | null> {
   try {

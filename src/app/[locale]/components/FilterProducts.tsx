@@ -28,14 +28,14 @@ const FilterProducts = () => {
     [searchParams]
   );
 
-  function handleSortChange(e) {
+  function handleSortChange(e: React.ChangeEvent<HTMLSelectElement>) {
     const sortOption = e.target.value;
     memoizedSearchParams.set('sortBy', sortOption);
     router.push(`${pathname}?${memoizedSearchParams.toString()}`);
   }
 
   const handleSearch = useDebouncedCallback((e) => {
-    if (memoizedSearchParams.get('page') > 1) {
+    if (Number(memoizedSearchParams.get('page')) > 1) {
       memoizedSearchParams.set('page', '1');
     }
     const searchValue = e.target.value;

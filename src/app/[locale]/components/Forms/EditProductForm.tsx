@@ -1,11 +1,16 @@
+import { ProductType } from '../../types/api';
 import './Form.css';
 
 export default function EditProductForm({
   product,
   setProducts,
   setActiveProduct,
+}: {
+  product: ProductType;
+  setProducts: React.Dispatch<React.SetStateAction<ProductType[]>>;
+  setActiveProduct: React.Dispatch<React.SetStateAction<ProductType | null>>;
 }) {
-  function handleSubmit(e) {
+  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     if (!product.title || !product.description) return;
     setProducts((curProducts) =>
@@ -63,7 +68,7 @@ export default function EditProductForm({
           className="input"
           defaultValue={product?.price}
           onChange={(e) =>
-            setActiveProduct({ ...product, price: e.target.value })
+            setActiveProduct({ ...product, price: Number(e.target.value) })
           }
         />
         <button

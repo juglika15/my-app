@@ -1,8 +1,15 @@
 import { useState } from 'react';
 import './Form.css';
+import { PostType } from '../../types/api';
 
-export default function AddPostForm({ setPosts, setAddActive }) {
-  const [newPost, setNewPosts] = useState({
+export default function AddPostForm({
+  setPosts,
+  setAddActive,
+}: {
+  setPosts: React.Dispatch<React.SetStateAction<PostType[]>>;
+  setAddActive: React.Dispatch<React.SetStateAction<boolean>>;
+}) {
+  const [newPost, setNewPosts] = useState<PostType>({
     title: '',
     body: '',
     views: 1,
@@ -11,10 +18,10 @@ export default function AddPostForm({ setPosts, setAddActive }) {
     id: Date.now(),
   });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!newPost.title || !newPost.body) return;
-    setPosts((curPosts) => [newPost, ...curPosts]);
+    setPosts((curPosts: PostType[]) => [newPost, ...curPosts]);
     setAddActive(false);
   };
 

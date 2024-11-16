@@ -1,7 +1,16 @@
+import { PostType } from '../../types/api';
 import './Form.css';
 
-export default function EditPostForm({ post, setPosts, setActivePost }) {
-  function handleSubmit(e) {
+export default function EditPostForm({
+  post,
+  setPosts,
+  setActivePost,
+}: {
+  post: PostType;
+  setPosts: React.Dispatch<React.SetStateAction<PostType[]>>;
+  setActivePost: React.Dispatch<React.SetStateAction<PostType | null>>;
+}) {
+  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     if (!post.title || !post.body) return;
     setPosts((curPosts) =>

@@ -6,12 +6,12 @@ import Post from './post';
 import EditPostForm from '../components/Forms/EditPostForm';
 import AddButton from '../components/Buttons/AddButton';
 import AddPostForm from '../components/Forms/AddPostForm';
-import { PostType } from '../../../types/api';
+import { PostType } from '../types/api';
 
 export default function PostList() {
-  const [posts, setPosts] = useState([]);
+  const [posts, setPosts] = useState<PostType[]>([]);
   const [activePost, setActivePost] = useState<PostType | null>(null);
-  const [addActive, setAddActive] = useState(false);
+  const [addActivePost, setAddActivePost] = useState(false);
 
   useEffect(() => {
     async function fetchPosts() {
@@ -28,7 +28,7 @@ export default function PostList() {
 
   return (
     <main className="main dark:bg-orange-300">
-      <AddButton name={'Post'} setAddActive={setAddActive} />
+      <AddButton name={'Post'} setAddActive={setAddActivePost} />
       {posts.map((post: PostType) => (
         <Post
           post={post}
@@ -37,8 +37,8 @@ export default function PostList() {
           setActivePost={setActivePost}
         />
       ))}
-      {addActive && (
-        <AddPostForm setPosts={setPosts} setAddActive={setAddActive} />
+      {addActivePost && (
+        <AddPostForm setPosts={setPosts} setAddActive={setAddActivePost} />
       )}
       {activePost && (
         <EditPostForm

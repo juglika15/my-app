@@ -1,5 +1,7 @@
+import { PostType } from '../[locale]/types/api';
+
 async function useFetchPosts() {
-  let posts = [];
+  let posts: PostType[] = [];
 
   try {
     const response = await fetch('https://dummyjson.com/posts');

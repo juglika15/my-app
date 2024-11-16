@@ -1,6 +1,6 @@
 'use client';
 
-import { useTheme } from 'next-themes';
+import { useTheme, UseThemeProps } from 'next-themes';
 import { useEffect, useState } from 'react';
 import { IoIosDesktop } from 'react-icons/io';
 import { FaMoon } from 'react-icons/fa';
@@ -16,6 +16,8 @@ const ThemeToggle = () => {
 
   if (!mounted) return null;
 
+  if (resolvedTheme !== 'dark' && resolvedTheme !== 'light') return null;
+
   const options = {
     light: { label: t('light'), icon: <BsSunFill /> },
     dark: { label: t('dark'), icon: <FaMoon /> },
@@ -24,7 +26,7 @@ const ThemeToggle = () => {
 
   return (
     <div className="relative group">
-      <button className="flex items-center gap-2">
+      <button className="flex items-center gap-2 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-900 dark:text-gray-100 rounded-lg outline-none transition duration-200 ease-in-out p-2">
         {options[resolvedTheme].icon} {options[resolvedTheme].label}
       </button>
       <div className="absolute left-0 pt-2 flex-col gap-2 bg-gray-100 dark:bg-gray-600 p-2 rounded-md shadow-lg group-hover:block hidden ">

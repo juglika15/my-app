@@ -4,7 +4,7 @@ import './../components/Content/item.css';
 import PaginationControls from '../components/PaginationControls';
 import FilterProducts from '../components/FilterProducts';
 import AddButton from '../components/Buttons/AddButton';
-import { ProductType } from '../../../types/api';
+import { ProductType } from '../types/api';
 
 export default function ProductList({
   products,
@@ -16,8 +16,8 @@ export default function ProductList({
   products: ProductType[];
   totalPages: number;
   onDelete: (id: number) => void;
-  setActiveProduct: (product: ProductType) => void;
-  setAddProductActive: (active: boolean) => void;
+  setActiveProduct: React.Dispatch<React.SetStateAction<ProductType | null>>;
+  setAddProductActive: React.Dispatch<React.SetStateAction<boolean>>;
 }) {
   return (
     <main className="main dark:bg-orange-300">

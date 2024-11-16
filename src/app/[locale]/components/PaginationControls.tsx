@@ -3,14 +3,13 @@
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import { useMemo } from 'react';
 
-const PaginationControls = ({ totalPages }) => {
+const PaginationControls = ({ totalPages }: { totalPages: number }) => {
   const router = useRouter();
   const searchParams = useSearchParams();
   const pathname = usePathname();
 
-  const currentPage = useMemo(
-    () => searchParams.get('page') ?? '1',
-    [searchParams]
+  const currentPage = Number(
+    useMemo(() => searchParams.get('page') ?? '1', [searchParams])
   );
   const itemsPerPage = searchParams.get('itemsPerPage') ?? '15';
 
@@ -19,8 +18,8 @@ const PaginationControls = ({ totalPages }) => {
     [searchParams]
   );
 
-  const navigateToPage = (page) => {
-    newSearchParams.set('page', page);
+  const navigateToPage = (page: number) => {
+    newSearchParams.set('page', page.toString());
     newSearchParams.set('itemsPerPage', itemsPerPage);
 
     router.push(`${pathname}?${newSearchParams.toString()}`);
@@ -28,13 +27,13 @@ const PaginationControls = ({ totalPages }) => {
 
   const handleNextPage = () => {
     if (currentPage < totalPages) {
-      navigateToPage(Number(currentPage) + 1);
+      navigateToPage(currentPage + 1);
     }
   };
 
   const handlePreviousPage = () => {
-    if (currentPage > 1) {
-      navigateToPage(Number(currentPage) - 1);
+    if (+currentPage > 1) {
+      navigateToPage(currentPage - 1);
     }
   };
 

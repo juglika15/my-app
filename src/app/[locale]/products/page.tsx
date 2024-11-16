@@ -7,7 +7,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
 import EditProductForm from '../components/Forms/EditProductForm';
 import AddProductForm from '../components/Forms/AddProductsForm';
-import { ProductType } from '../../../types/api';
+import { ProductType } from '../types/api';
 
 export default function Products() {
   const searchParams = useSearchParams();
@@ -29,16 +29,16 @@ export default function Products() {
     return url;
   }, [currentPage, itemsPerPage, sortByValue, orderValue, searchValue]);
 
-  const [products, setProducts] = useState<ProductType[] | []>([]);
+  const [products, setProducts] = useState<ProductType[]>([]);
   const [totalPages, setTotalPages] = useState(0);
   const [activeProduct, setActiveProduct] = useState<ProductType | null>(null);
-  const [addProductActive, setAddProductActive] = useState(false);
+  const [addProductActive, setAddProductActive] = useState<boolean>(false);
 
   useEffect(() => {
     const fetchProducts = async () => {
       const { products, totalPages } = await useFetchProducts(
         productsURL,
-        itemsPerPage
+        Number(itemsPerPage)
       );
       setProducts(products);
       setTotalPages(totalPages);

@@ -1,16 +1,38 @@
 import { useState } from 'react';
 import './Form.css';
+import { ProductType } from '../../types/api';
 
-export default function AddProductForm({ setProducts, setAddProductActive }) {
-  const [newProduct, setNewProduct] = useState({
+export default function AddProductForm({
+  setProducts,
+  setAddProductActive,
+}: {
+  setProducts: React.Dispatch<React.SetStateAction<ProductType[]>>;
+  setAddProductActive: React.Dispatch<React.SetStateAction<boolean>>;
+}) {
+  const [newProduct, setNewProduct] = useState<ProductType>({
+    id: Date.now(),
     title: '',
     description: '',
     price: 0,
+    discountPercentage: 0,
+    rating: 0,
+    stock: 0,
+    brand: '',
+    category: '',
+    thumbnail: '',
     images: [],
-    id: Date.now(),
+    tags: [],
+    warrantyInformation: '',
+    shippingInformation: '',
+    minimumOrderQuantity: 0,
+    returnPolicy: '',
+    dimensions: { width: 0, height: 0, depth: 0 },
+    weight: 0,
+    sku: '',
+    reviews: [],
   });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!newProduct.title || !newProduct.description || !newProduct.images[0])
       return;
