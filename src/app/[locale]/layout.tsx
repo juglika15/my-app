@@ -4,8 +4,16 @@ import { notFound } from 'next/navigation';
 import { routing } from '../../i18n/routing';
 import Header from './components/Header/header';
 import Footer from './components/Footer/footer';
+import '../../globals.css';
+import { UserProvider } from '@auth0/nextjs-auth0/client';
+import { Providers } from '../providers';
 
-export default async function LocaleLayout({
+export const metadata = {
+  title: 'Dune',
+  description: 'Web site created with Next.js.',
+};
+
+export default async function RootLayout({
   children,
   params: { locale },
 }: {
@@ -22,10 +30,18 @@ export default async function LocaleLayout({
   const messages = await getMessages();
 
   return (
-    <NextIntlClientProvider messages={messages}>
-      <Header />
-      {children}
-      <Footer />
-    </NextIntlClientProvider>
+    <html lang={locale} suppressHydrationWarning>
+      <UserProvider>
+        <body>
+          <NextIntlClientProvider messages={messages}>
+            <Providers>
+              <Header />
+              {children}
+              <Footer />
+            </Providers>
+          </NextIntlClientProvider>
+        </body>
+      </UserProvider>
+    </html>
   );
 }

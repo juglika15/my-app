@@ -110,7 +110,10 @@
       {
         "name": "next"
       }
-    ]
+    ],
+    "paths": {
+      "@/*": ["./*"]
+    }
   },
   "exclude": ["node_modules"],
   "include": [
