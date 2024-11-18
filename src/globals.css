@@ -21,12 +21,7 @@ body {
   --background-color: #f9f0db;
 }
 
-html,
 body {
-  height: 100%;
-}
-
-.cont {
   display: flex;
   flex-direction: column;
   font-family: 'Dune', sans-serif;
